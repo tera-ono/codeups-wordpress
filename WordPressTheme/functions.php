@@ -151,3 +151,19 @@ function my_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
+
+
+/* それぞれのテンプレートファイルのメインループを制御して、出力する数などを変更
+===================================================*/
+function my_preget_posts($query) {
+	//管理画面を表示しているとき、もしくは現在のクエリがメインクエリでなければ動作をキャンセルする
+	//トップページを固定ページで設定しているので、front-page.phpでは使えない
+		if (is_admin() || ! $query->is_main_query()){
+			return;
+		}
+		/* --- カスタム投稿タイプ 制作実績 --- */
+		if ($query->is_post_type_archive('works')) {
+			$query->set('posts_per_page', 6);
+		}
+	}
+	add_action('pre_get_posts', 'my_preget_posts');
