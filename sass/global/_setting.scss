@@ -8,7 +8,7 @@ $inner: 1015px;
 // ※キャンパス幅ではなくインナーの幅を指す
 
 // 余白
-$padding-pc: 40px;
+$padding-pc: 25px;
 $padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
@@ -17,17 +17,10 @@ $padding-sp: 20px;
 // フォント設定
 ////////////////////
 
-$base-font-family: "lato","Noto Sans JP", sans-serif;
-$second-font-family: "Noto Sans JP", sans-serif;
+$base-font-family: 'Noto Sans JP', sans-serif;
+$second-font-family: 'Noto Serif JP', serif;
 // ※検証ツールでしっかり反映されているか確認する
 
-body {
-  font-family: $base-font-family;
-  /* --- ドロワーメニュー表示時背景スクロール禁止 --- */
-  &.is-open {
-    overflow: hidden;
-  }
-}
 
 // フォントウェイト
 $regular: 400;
@@ -40,13 +33,25 @@ $ex-bold: 900;
 ////////////////////
 
 //色指定（共通性のあるものは出来る限り指定すると良い）
-$main: #3e5b9c;
-$black: #191919;
-$white: #ffffff;
-$gray: #f0f0f0;
-$navy: #182848;
-$accent: #b8614b;
+// $main: #3e5b9c;
+$bg-black: #111111;
+$black: #000000;
+$white: #FFFFFF;
+$gray: #333333;
+$yellow: #FFEA2E;
+$accent: #F9F871;
 $red: red;
+
+
+body {
+  font-family: $base-font-family;
+  background-color: $bg-black;
+  color: $white;
+  /* --- ドロワーメニュー表示時背景スクロール禁止 --- */
+  &.is-open {
+    overflow: hidden;
+  }
+}
 
 ////////////////////
 // opacity

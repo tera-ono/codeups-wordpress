@@ -36,6 +36,9 @@ add_action( 'after_setup_theme', 'my_setup' );
 function my_script_init()
 {
 
+	wp_enqueue_style( 'google-font1', "https://fonts.googleapis.com", array(), '1.0.1', 'all' );
+	wp_enqueue_style( 'google-font2', "https://fonts.gstatic.com", array(), '1.0.1', 'all' );
+	wp_enqueue_style( 'google-font3', "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP&display=swap", array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/styles.css', array(), '1.0.1', 'all' );
 
 	wp_enqueue_script( 'mv-swiper', get_template_directory_uri() . '/assets/js/mv_slider.js',array(), '1.0.0', true );

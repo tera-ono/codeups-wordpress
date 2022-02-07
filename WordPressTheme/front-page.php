@@ -22,17 +22,18 @@
     ?>
       <div class="c-news">
         <div class="c-news__meta">
-          <time class="" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
-          <span class="">
+          <time class="c-news__time" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+          <span class="c-news__category">
             <?php get_template_part('includes/cat_name'); ?>
           </span>
         </div>
-        <p class=""><?php the_title(); ?></p>
+        <p class="c-news__title"><?php the_title(); ?></p>
       </div><!-- c-news -->
     <?php endforeach;
     wp_reset_postdata(); ?>
-
-    <a href="<?php echo esc_url(home_url('news')); ?>" class="c-topNews-btn">全てみる</a>
+  <div class="p-topNews__btn">
+    <a href="<?php echo esc_url(home_url('news')); ?>" class="c-topNews-btn">すべてみる</a>
+  </div>
   </div>
 </section>
 

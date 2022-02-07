@@ -1,0 +1,15 @@
+@use "global" as *;
+.c-topNews-btn {
+  display: none;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  color: $black;
+  background-color: $white;
+  border: 1px solid $white;
+  padding: rem(3) rem(28);
+  text-align: center;
+  @include mq("md") {
+    display: inline-block;
+  }
+}

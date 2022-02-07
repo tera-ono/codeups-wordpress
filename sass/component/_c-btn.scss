@@ -1,0 +1,16 @@
+@use "global" as *;
+.c-btn {
+  display: block;
+  max-width: rem(360);
+  width: 100%;
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1.45;
+  letter-spacing: 0.125em;
+  color: $white;
+  background-color: $gray;
+  border: 1px solid $white;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  text-align: center;
+}

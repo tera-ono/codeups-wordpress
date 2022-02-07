@@ -1,0 +1,32 @@
+@use "global" as *;
+.c-news {
+  color: $white;
+}
+
+.c-news__meta {
+  
+}
+
+.c-news__time {
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  margin-right: rem(32);
+}
+
+.c-news__category {
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.448;
+  padding: rem(5.3) rem(21);
+  border: 1px solid $white;
+}
+
+.c-news__title {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  margin-top: rem(10);
+}
