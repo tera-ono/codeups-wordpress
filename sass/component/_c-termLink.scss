@@ -1,0 +1,17 @@
+@use "global" as *;
+.c-termLink {
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+  color: $white;
+  background-color: transparent;
+  padding: rem(3) rem(10);
+  transition: $transition-duration linear;
+}
+
+.c-termLink.is-active {
+  color: $gray;
+  background-color: $white;
+  transition: $transition-duration linear;
+}

@@ -164,8 +164,8 @@ function my_preget_posts($query) {
 		if (is_admin() || ! $query->is_main_query()){
 			return;
 		}
-		/* --- カスタム投稿タイプ 制作実績 --- */
-		if ($query->is_post_type_archive('works')) {
+		/* --- カスタム投稿タイプ 制作実績 もしくは、タクソノミー制作ジャンル --- */
+		if ($query->is_post_type_archive('works') || ($query -> is_tax('work_genre'))) {
 			$query->set('posts_per_page', 6);
 		}
 	}
