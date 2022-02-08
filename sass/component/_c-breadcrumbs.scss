@@ -1,0 +1,13 @@
+@use "global" as *;
+.c-breadcrumbs {
+
+}
+
+.current-item[property="name"] {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: rem(300);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

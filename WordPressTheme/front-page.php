@@ -27,13 +27,15 @@
             <?php get_template_part('includes/cat_name'); ?>
           </span>
         </div>
-        <p class="c-news__title"><?php the_title(); ?></p>
+        <a href="<?php the_permalink(); ?>" class="c-news__linkTitle">
+          <?php the_title(); ?>
+        </a>
       </div><!-- c-news -->
     <?php endforeach;
     wp_reset_postdata(); ?>
-  <div class="p-topNews__btn">
-    <a href="<?php echo esc_url(home_url('news')); ?>" class="c-topNews-btn">すべてみる</a>
-  </div>
+    <div class="p-topNews__btn">
+      <a href="<?php echo esc_url(home_url('news')); ?>" class="c-topNews-btn">すべてみる</a>
+    </div>
   </div>
 </section>
 
