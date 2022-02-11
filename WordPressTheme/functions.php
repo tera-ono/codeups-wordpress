@@ -168,5 +168,8 @@ function my_preget_posts($query) {
 		if ($query->is_post_type_archive('works') || ($query -> is_tax('work_genre'))) {
 			$query->set('posts_per_page', 6);
 		}
+		if ($query->is_post_type_archive('blog') || ($query -> is_tax('blog_category'))) {
+			$query->set('posts_per_page', 9);
+		}
 	}
 	add_action('pre_get_posts', 'my_preget_posts');

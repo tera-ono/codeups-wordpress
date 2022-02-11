@@ -16,31 +16,13 @@
         </div><!-- c-news -->
     <?php endwhile;
     endif;  ?>
-    
-    <!-- ページが1ページ以上あれば以下を表示 -->
-    <?php if (paginate_links()) : ?>
-      <!-- pagination -->
-      
-      <div class="c-pagination">
-        <?php
-        echo
-        paginate_links(
-          array(
-            'total' => 4,
-            'end_size' => 1,
-            'mid_size' => 2,
-            'prev_next' => true,
-            'prev_text' => 'PREV',
-            'next_text' => 'NEXT',
-          )
-        );
-        ?>
-      </div><!-- /pagenation -->
-    <?php endif; ?>
 
-  </div>
+    <!-- パーツ化したページネーション -->
+    <?php get_template_part('includes/pagination'); ?>
+
+  </div><!-- /.l-news p-news -->
 </section>
-<!-- /.l-news p-news -->
+
 
 
 <?php get_footer(); ?>
