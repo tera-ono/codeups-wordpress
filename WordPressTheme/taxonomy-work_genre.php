@@ -6,17 +6,10 @@
 <?php get_template_part('includes/work_linkTab'); ?>
 <div class="p-works__items p-worksItems">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <a href="<?php the_permalink(); ?>" class="p-worksItems__item c-worksItem">
-        <div class="c-worksItem__img">
-          <?php get_template_part('includes/thumbnail'); ?>
-          <span class="c-worksItem__term">
-            <?php get_template_part('includes/works_term'); ?>
-          </span>
-        </div>
-        <p class="c-worksItem__title">
-          <?php the_title(); ?>
-        </p>
-      </a>
+
+      <!-- パーツ化したブログカード -->
+      <?php get_template_part('includes/blog_card'); ?>
+
   <?php endwhile;
   endif; ?>
 </div>
