@@ -5,7 +5,7 @@
       <?php get_template_part('includes/thumbnail'); ?>
     </div>
     <div class="c-card__body">
-      <p class="c-card__title"><?php the_title(); ?></p>
+      <p class="c-card__title"><?php get_template_part('includes/title_limit'); ?></p>
       <p class="c-card__excerpt"><?php echo esc_html(get_the_excerpt()); ?></p>
       <div class="c-card__meta">
         <span class="c-card__category c-categoryTag">

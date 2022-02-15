@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.c-commonContact {
+  padding-top: rem(67);
+  padding-bottom: rem(64);
+  background-color: $gray;
+  @include mq("md") {
+    padding-top: rem(148);
+    padding-bottom: rem(148);
+  }
+}
+
+.c-commonContact__title {
+  
+}
+
+.c-commonContact__text {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.4481;
+  letter-spacing: 0.125em;
+  color: $white;
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: rem(24);
+    text-align: center;
+  }
+}
+
+.c-commonContact__link {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(60);
+  }
+}
