@@ -8,6 +8,20 @@
 <a href="<?php echo esc_url(home_url('contact')); ?>" class="">お問い合わせ</a>
 <br>
 
+<div class="">
+  <h3 class="c-sectionTitle">
+    お問い合わせ
+    <span class="c-sectionTitle__sub c-sectionTitle__sub--left">Contact</span>
+  </h3>
+</div>
+
+<div class="">
+  <h3 class="c-sectionTitle">
+    お問い合わせ
+    <span class="c-sectionTitle__sub c-sectionTitle__sub--right">Contact</span>
+  </h3>
+</div>
+
 
 <!-- デフォルト投稿1件表示 -->
 <section class="l-topNews p-topNews">

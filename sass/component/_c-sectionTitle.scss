@@ -1,0 +1,51 @@
+@use "global" as *;
+
+.c-sectionTitle {
+  position: relative;
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $white;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(30);
+    letter-spacing: 0.66666;
+  }
+}
+
+.c-sectionTitle__sub {
+  position: absolute;
+  display: inline-block;
+  top: rem(-13);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $second-font-family;
+  font-size: rem(50);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: $accent;
+  opacity: 0.27;
+  @include mq("md") {
+    font-size: rem(110);
+    letter-spacing: 0.0181818;
+  }
+}
+
+.c-sectionTitle__sub--left {
+  @include mq("md") {
+    top: rem(25);
+    left: 0;
+    transform: translate(0, -50%);
+  }
+}
+
+.c-sectionTitle__sub--right {
+  @include mq("md") {
+    top: rem(25);
+    left: auto;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+}
