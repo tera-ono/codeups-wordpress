@@ -7,8 +7,18 @@
 <div class="p-works__items p-worksItems">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-      <!-- パーツ化したブログカード -->
-      <?php get_template_part('includes/blog_card'); ?>
+      <a href="<?php the_permalink(); ?>" class="c-work">
+        <article>
+          <div class="c-work__img">
+            <?php get_template_part('includes/thumbnail'); ?>
+            <!-- パーツ化したターム名出力 -->
+            <?php get_template_part('includes/term_name'); ?>
+          </div>
+          <p class="c-works__title">
+            <?php the_title(); ?>
+          </p>
+        </article>
+      </a>
 
   <?php endwhile;
   endif; ?>

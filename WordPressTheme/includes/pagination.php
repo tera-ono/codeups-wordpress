@@ -6,7 +6,6 @@
         echo
         paginate_links(
           array(
-            'total' => 4,
             'end_size' => 1,
             'mid_size' => 2,
             'prev_next' => true,
@@ -15,5 +14,5 @@
           )
         );
         ?>
-      </div><!-- /pagenation -->
+      </div><!-- /pagination -->
     <?php endif; ?>

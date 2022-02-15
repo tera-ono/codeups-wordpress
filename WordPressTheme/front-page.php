@@ -37,23 +37,25 @@
 <a href="<?php echo esc_url(home_url('works')); ?>" class="c-btn">詳しく見る</a>
 
 <a href="<?php echo esc_url(home_url('overview')); ?>" class="c-btn">詳しく見る</a>
+<div class="l-inner">
+  <div class="c-cards">
+    <?php
+    $args = array(
+      'post_type' => 'blog',
+      'posts_per_page' => 3,
+    );
+    $posts = get_posts($args);
+    foreach ($posts as $post) : setup_postdata($post);
+    ?>
 
+      <!-- パーツ化したブログカード -->
+      <?php get_template_part('includes/blog_card'); ?>
 
-<?php
-$args = array(
-  'post_type' => 'blog',
-  'posts_per_page' => 3,
-);
-$posts = get_posts($args);
-foreach ($posts as $post) : setup_postdata($post);
-?>
-
-  <!-- パーツ化したブログカード -->
-  <?php get_template_part('includes/blog_card'); ?>
-
-<?php endforeach;
-wp_reset_postdata(); ?>
-
-<a href="<?php echo esc_url(home_url('blog')); ?>">詳しくみる</a>
+    <?php endforeach;
+    wp_reset_postdata(); ?>
+  </div>
+  <!-- /.c-cards -->
+  <a href="<?php echo esc_url(home_url('blog')); ?>">詳しくみる</a>
+</div>
 
 <?php get_footer(); ?>

@@ -1,0 +1,59 @@
+@use "global" as *;
+.c-card {
+  display: block  ;
+  background-color: $white;
+}
+
+.c-card__img {
+  position: relative;
+  width: 100%;
+}
+.c-card__img::before {
+  content: '';
+  display: block;
+  padding-top: 66.56%;
+}
+.c-card__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-position: center;
+  object-fit: cover;
+}
+
+.c-card__body {
+  padding: rem(8) rem(23) rem(16);
+  color: $gray;
+}
+.c-card__title {
+  font-size: rem(18);
+  font-weight: $regular;
+  line-height: 1.9444;
+  letter-spacing: 0.055em;
+}
+
+.c-card__excerpt {
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1.857;
+  letter-spacing: 0.7142;
+  margin-top: rem(4);
+}
+
+.c-card__meta {
+  display: flex;
+  align-items: center;
+  margin-top: rem(8);
+}
+
+.c-card__time {
+  display: inline-block;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.07142em;
+  margin-left: auto;  
+}

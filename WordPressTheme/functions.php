@@ -142,7 +142,7 @@ add_filter('get_the_archive_title', 'my_archive_title');
  */
 function my_excerpt_length($length)
 {
-	return 80;
+	return 50;
 }
 add_filter('excerpt_length', 'my_excerpt_length', 999);
 

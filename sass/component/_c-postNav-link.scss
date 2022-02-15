@@ -1,0 +1,26 @@
+@use "global" as *;
+.c-postNav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-postNav-link__item {
+  width: rem(71);
+}
+
+.c-postNav-link__item a {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.125;
+  padding: rem(3) 0;
+  color: $white;
+  border: 1px solid $white;
+}
+
+.c-postNav-link__item:not(:first-of-type) {
+  margin-left: rem(48);
+}

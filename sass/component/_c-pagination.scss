@@ -1,0 +1,41 @@
+@use "global" as *;
+.c-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- 全てのページネーションに付いているクラス --- */
+.page-numbers {
+  display: inline-block;
+  width: rem(24);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  border: 1px solid $white;
+  padding: rem(3) 0;
+  text-align: center;
+  margin-left: rem(16);
+}
+
+/* --- 上の.page-numbersの幅を上書き --- */
+.prev,.next {
+  width: rem(71);
+}
+
+/* --- 前へのリンク --- */
+.prev {
+  margin-right: rem(8);
+  margin-left: 0;
+}
+
+/* --- 次へのリンク --- */
+.next {
+  margin-left: rem(24);
+}
+
+/* --- 現在のページ spanタグ--- */
+.current {
+  color: $gray;
+  background-color: $white;
+}

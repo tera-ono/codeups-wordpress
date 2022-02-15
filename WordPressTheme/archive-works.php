@@ -11,7 +11,8 @@
         <div class="c-worksItem__img">
           <?php get_template_part('includes/thumbnail'); ?>
           <span class="c-worksItem__term">
-            <?php get_template_part('includes/works_term'); ?>
+            <!-- パーツ化したターム名出力 -->
+            <?php get_template_part('includes/term_name'); ?>
           </span>
         </div>
         <p class="c-worksItem__title">
