@@ -496,6 +496,7 @@ select::-ms-expand {
   }
 }
 
+/* --- お問い合わせページのPC以外のフッターの上の:お問い合わせセクションのタイトルのスタイル --- */
 .c-sectionTitle__sub {
   position: absolute;
   display: inline-block;
@@ -515,17 +516,19 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .c-sectionTitle__sub {
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     font-size: 6.875rem;
     letter-spacing: 0.0181818;
   }
 }
 
+/* モディファイアで、その他のセクションタイトルの左右寄せを制御
+===================================================*/
 @media screen and (min-width: 768px) {
   .c-sectionTitle__sub--left {
     top: 1.5625rem;
-    left: 0;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
   }
 }
 
@@ -534,8 +537,6 @@ select::-ms-expand {
     top: 1.5625rem;
     left: auto;
     right: 0;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
   }
 }
 

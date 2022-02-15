@@ -8,17 +8,18 @@
 <a href="<?php echo esc_url(home_url('contact')); ?>" class="">お問い合わせ</a>
 <br>
 
-<div class="">
+セクションタイトル
+<div class="l-inner">
   <h3 class="c-sectionTitle">
     お問い合わせ
-    <span class="c-sectionTitle__sub c-sectionTitle__sub--left">Contact</span>
+    <span class="c-sectionTitle__sub">Contact</span>
   </h3>
 </div>
 
-<div class="">
+<div class="l-inner">
   <h3 class="c-sectionTitle">
-    お問い合わせ
-    <span class="c-sectionTitle__sub c-sectionTitle__sub--right">Contact</span>
+    制作実績
+    <span class="c-sectionTitle__sub c-sectionTitle__sub--right">Works</span>
   </h3>
 </div>
 

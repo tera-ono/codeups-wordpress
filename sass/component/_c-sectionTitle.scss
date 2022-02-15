@@ -14,6 +14,7 @@
   }
 }
 
+/* --- お問い合わせページのPC以外のフッターの上の:お問い合わせセクションのタイトルのスタイル --- */
 .c-sectionTitle__sub {
   position: absolute;
   display: inline-block;
@@ -28,16 +29,18 @@
   color: $accent;
   opacity: 0.27;
   @include mq("md") {
+    left: 0;
+    transform: translate(0, -50%);
     font-size: rem(110);
     letter-spacing: 0.0181818;
   }
 }
 
+/* モディファイアで、その他のセクションタイトルの左右寄せを制御
+===================================================*/
 .c-sectionTitle__sub--left {
   @include mq("md") {
     top: rem(25);
-    left: 0;
-    transform: translate(0, -50%);
   }
 }
 
@@ -46,6 +49,5 @@
     top: rem(25);
     left: auto;
     right: 0;
-    transform: translate(0, -50%);
   }
 }
