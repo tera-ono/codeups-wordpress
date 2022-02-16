@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.p-header-nav {
+}
+
+.p-header-nav__items {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.p-header-nav__items li {
+  height: inherit;
+}
+
+.p-header-nav__items a {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding: 0 rem(16);
+}
+
+.p-header-nav__items span {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 2.1875;
+  letter-spacing: 0.125em;
+  color: $white;
+}
+
+/* --- 最後の要素: お問い合わせ --- */
+.p-header-nav__items li:last-of-type a {
+  position: relative;
+  padding: 0 rem(32);
+  background-color: $white;
+  transition: color $transition-duration linear;
+  z-index: 2;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background-color: $gray;
+    z-index: -1;
+    transition: transform $transition-duration linear;
+  }
+}
+
+.p-header-nav__items li:last-of-type span {
+  color: $gray;
+  /* --- 他のナビの下線のスタイルを消す --- */
+  border-bottom: none;
+}
+
+@media (any-hover: hover) {
+  .p-header-nav__items li:last-of-type a:hover span {
+    color: $white;
+    transition: 0.1s ease-in;
+    transition: color $transition-duration linear;
+  }
+  .p-header-nav__items li:last-of-type a:hover::before {
+    transform: translateX(0);
+    transition: transform $transition-duration linear;
+  }
+}

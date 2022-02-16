@@ -2,8 +2,9 @@
 <header class="l-header p-header">
 	<div class="p-header__inner">
 
-	
-
+		<a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo">
+			<img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/logo.svg"); ?>" alt="CodeUpsロゴ">
+		</a>
 		<!-- グローバルメニュー -->
 		<nav class="p-header__nav p-header-nav">
 			<?php
@@ -12,21 +13,23 @@
 					'depth' => 1,
 					'theme_location' => 'global', //グローバルメニューをここに表示すると指定
 					'container' => false,
-					'menu_class' => 'p-header-nav__items', //ulのクラス
+					'menu_class' => 'p-header-nav__items c-navItems', //ulのクラス
+					'link_before' => '<span>',
+					'link_after' => '</span>'
 				)
 			);
 			?>
 		</nav>
 
-		
 
-    <!-- ハンバーガーメニュー -->
-    <div class="c-mobile-menu js-mobile-menu u-hidden-tab-large">
-      <span class="c-mobile-menu__bar"></span>
-      <span class="c-mobile-menu__bar"></span>
-      <span class="c-mobile-menu__bar"></span>
-      
-    </div>
+
+		<!-- ハンバーガーメニュー -->
+		<div class="c-mobile-menu js-mobile-menu u-hidden-tab-large">
+			<span class="c-mobile-menu__bar"></span>
+			<span class="c-mobile-menu__bar"></span>
+			<span class="c-mobile-menu__bar"></span>
+
+		</div>
 	</div>
 	<!--.p-header__inner-->
 </header>

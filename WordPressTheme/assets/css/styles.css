@@ -454,6 +454,12 @@ select::-ms-expand {
   color: #FFFFFF;
 }
 
+@media screen and (min-width: 768px) {
+  .c-mobile-menu {
+    display: none;
+  }
+}
+
 /* --- ナビメニューホバー時テキストリンクに下線表示 の共通クラス--- */
 .c-navItems span {
   -webkit-transition: 0.1s ease-in;
@@ -948,6 +954,143 @@ select::-ms-expand {
   .p-footer__copyright {
     font-size: 0.9375rem;
     margin-top: 3.75rem;
+  }
+}
+
+.p-header-nav__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+}
+
+.p-header-nav__items li {
+  height: inherit;
+}
+
+.p-header-nav__items a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+  padding: 0 16px;
+  padding: 0 1rem;
+}
+
+.p-header-nav__items span {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.1875;
+  letter-spacing: 0.125em;
+  color: #FFFFFF;
+}
+
+/* --- 最後の要素: お問い合わせ --- */
+.p-header-nav__items li:last-of-type a {
+  position: relative;
+  padding: 0 32px;
+  padding: 0 2rem;
+  background-color: #FFFFFF;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+  z-index: 2;
+  overflow: hidden;
+}
+.p-header-nav__items li:last-of-type a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background-color: #333333;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.p-header-nav__items li:last-of-type span {
+  color: #333333;
+  /* --- 他のナビの下線のスタイルを消す --- */
+  border-bottom: none;
+}
+
+@media (any-hover: hover) {
+  .p-header-nav__items li:last-of-type a:hover span {
+    color: #FFFFFF;
+    -webkit-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
+  }
+
+  .p-header-nav__items li:last-of-type a:hover::before {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s linear;
+    transition: -webkit-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  }
+}
+.p-header {
+  height: 50px;
+  height: 3.125rem;
+  background-color: rgba(17, 17, 17, .5);
+}
+
+.p-header__inner {
+  height: inherit;
+  padding-left: 22px;
+  padding-left: 1.375rem;
+  padding-right: 22px;
+  padding-right: 1.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .p-header__inner {
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+}
+
+.p-header__logo {
+  width: 70px;
+  width: 4.375rem;
+}
+@media screen and (min-width: 768px) {
+  .p-header__logo {
+    width: 5.875rem;
+  }
+}
+
+.p-header__nav {
+  display: none;
+  height: inherit;
+}
+@media screen and (min-width: 768px) {
+  .p-header__nav {
+    display: block;
   }
 }
 
