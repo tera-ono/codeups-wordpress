@@ -1,0 +1,17 @@
+@use "global" as *;
+.c-scrollTop {
+  position: fixed;
+  bottom: rem(32);
+  right: rem(31);
+  width: rem(45);
+  height: rem(45);
+  z-index: 2;
+  transition: opacity $transition-duration linear;
+}
+
+@media (any-hover: hover) {
+  .c-scrollTop:hover {
+    opacity: 0.7;
+    transition: opacity $transition-duration linear;
+  }
+}

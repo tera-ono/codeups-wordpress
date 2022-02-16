@@ -1,0 +1,17 @@
+@use "global" as *;
+/* --- ナビメニューホバー時テキストリンクに下線表示 の共通クラス--- */
+
+.c-navItems span {
+  transition: 0.1s ease-in;
+  border: 1px solid transparent;
+}
+
+@media (any-hover: hover) {
+  .c-navItems a:hover span {
+    border-bottom: 1px solid $accent;
+    transition: 0.1s ease-in;
+  }
+  .c-navItems a:hover {
+    opacity: 1;
+  }
+}
