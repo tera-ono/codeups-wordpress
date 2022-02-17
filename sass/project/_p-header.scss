@@ -21,6 +21,7 @@
 
 .p-header__logo {
   width: rem(70);
+  z-index: $header-logo_z-index;
   @include mq("md") {
     width: rem(94);
   }

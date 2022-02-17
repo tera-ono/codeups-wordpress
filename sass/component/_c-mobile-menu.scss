@@ -1,7 +1,96 @@
 @use "global" as *;
 
 .c-mobile-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: rem(50);
+  height: rem(50);
+  cursor: pointer;
+  z-index: $mobile-menu_z-index;
   @include mq("md") {
     display: none;
+  }
+}
+
+/* --- クリック前の円 透明 --- */
+.c-mobile-menu::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all .75s;
+}
+
+.c-mobile-menu__bar {
+  display: block;
+  width: rem(24);
+  height: rem(2);
+  background-color: $white;
+  border-radius: 5px;
+}
+.c-mobile-menu__bar:first-of-type {
+  margin-bottom: rem(5);
+  transition: $transition-duration ease-in;
+}
+
+.c-mobile-menu__bar:nth-of-type(2) {
+  transition: $transition-duration ease-in;
+}
+
+.c-mobile-menu__bar:last-of-type {
+  margin-top: rem(5);
+  transition: $transition-duration ease-in;
+}
+
+
+/* --- ハンバーガーメニュークリック後のアニメーション --- */
+.c-mobile-menu.is-open {
+  & .c-mobile-menu__bar:first-of-type {
+    margin-bottom: rem(-2);
+    transform: rotate(-45deg);
+    transition: $transition-duration ease-in;
+  }
+  & .c-mobile-menu__bar:nth-of-type(2) {
+    opacity: 0;
+    transform: translateX(50%);
+    transition: $transition-duration ease-in;
+  }
+  & .c-mobile-menu__bar:last-of-type {
+    margin-top: rem(-2);
+    transform: rotate(45deg);
+    transition: $transition-duration ease-in;
+  }
+}
+
+.c-mobile-menu.is-open::after {
+  animation: rotateCircle .7s .25s forwards;
+}
+
+/* --- border-color 1:border-top 2: border-right 3: border-bottom 4: border-left 
+0%から100％までの間に約2回転しながら、円の色を右→右＋下→右＋下＋左→右＋下＋左＋上と増やしながら、最後には真円になるアニメーション
+--- */
+@keyframes rotateCircle {
+  0% {
+    border-color: transparent;
+    transform: rotate(0);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    transform: rotate(-680deg);
   }
 }

@@ -28,7 +28,6 @@
 			<span class="c-mobile-menu__bar"></span>
 			<span class="c-mobile-menu__bar"></span>
 			<span class="c-mobile-menu__bar"></span>
-
 		</div>
 	</div>
 	<!--.p-header__inner-->

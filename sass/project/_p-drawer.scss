@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.p-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bg-black;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition-duration ease-in;
+  overflow: scroll;
+  padding-bottom: rem(100);
+  z-index: $drawer_z-index;
+  @include mq("md") {
+    display: none;
+  }
+}
+
+/* --- ハンバーガーメニューをクリック後にJsで is-openクラスがトグルされる --- */
+.p-drawer.is-open {
+  visibility: visible;
+  opacity: 1;
+  transition: $transition-duration ease-in;
+}
+
+.p-drawer__items {
+  margin-top: rem(200);
+}
+
+.p-drawer__items a {
+  display: block;
+  padding: rem(16) 0;
+}
+
+.p-drawer__items span {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.125em;
+  color: $white;
+}

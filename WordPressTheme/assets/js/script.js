@@ -62,18 +62,24 @@ MV以下になると表れ以下追従
 *******************************************/
   $('.js-mobile-menu').on('click', function() {
     $(this).toggleClass('is-open');
-    $('.js-header__menu').toggleClass('is-open');
+    $('.js-drawer').toggleClass('is-open');
     // bodyにis-openクラスをトグルし、css overflow: hiddenを付け外ししてスクロールを禁止、解除させる
     $('body').toggleClass('is-open');
   });
 
-  $('.js-header__menu').on('click', function() {
-    $(this).removeClass('is-open');
-    $('.js-mobile-menu').removeClass('is-open');
-    $('body').removeClass('is-open');
-  });
+  
+  $('.js-drawer').on('click',function(event) {
+    // event.targetを使ってクリックした要素をjQueryオブジェクトに変換する
+    //「closest」でその最も近い親要素を指定し、その中に特定の要素があるかを「length」で確認
+      if(!$(event.target).closest('.p-drawer__items').length) {
+        $(this).removeClass('is-open');
+        $('.js-mobile-menu').removeClass('is-open');
+        $('body').removeClass('is-open');
+      }
+    });
 
 
+    
   //  ヘッダーの高さ
  var header_height = $('.js-header').innerHeight();
  //  MVの高さ
