@@ -184,14 +184,40 @@ select::-ms-expand {
   }
 }
 
+.l-breadcrumbs {
+  margin-top: 65px;
+  margin-top: 4.0625rem;
+}
+
+.c-breadcrumbs {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.0625em;
+  color: #FFFFFF;
+}
+
+.c-breadcrumbs__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .current-item[property=name] {
-  display: inline-block;
-  vertical-align: middle;
   max-width: 300px;
   max-width: 18.75rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+[property=itemListElement] {
+  padding: 3px 7px;
+  padding: 0.1875rem 0.4375rem;
 }
 
 .c-btn {
@@ -1236,9 +1262,14 @@ select::-ms-expand {
   }
 }
 .p-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 50px;
   height: 3.125rem;
   background-color: rgba(17, 17, 17, .5);
+  z-index: 200;
 }
 
 .p-header__inner {
@@ -1290,6 +1321,11 @@ select::-ms-expand {
   font-size: 6.25rem;
   color: #F9F871;
   font-weight: 700;
+}
+
+.topMv__swiper {
+  width: 100%;
+  height: 100vh;
 }
 
 /* --- タブレットサイズでブロックになり改行する --- */

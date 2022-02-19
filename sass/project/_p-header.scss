@@ -1,9 +1,13 @@
 @use "global" as *;
 
 .p-header {
-  // position: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: rem(50);
   background-color: rgba(17, 17, 17, 0.5);
+  z-index: $header_z-index;
 }
 
 .p-header__inner {

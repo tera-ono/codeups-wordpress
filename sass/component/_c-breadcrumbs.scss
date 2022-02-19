@@ -1,13 +1,25 @@
 @use "global" as *;
-.c-breadcrumbs {
 
+.c-breadcrumbs {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.0625em;
+  color: $white;
+}
+
+.c-breadcrumbs__inner {
+  display: flex;
+  align-items: center;
 }
 
 .current-item[property="name"] {
-  display: inline-block;
-  vertical-align: middle;
   max-width: rem(300);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+[property="itemListElement"] {
+  padding: rem(3) rem(7);
 }

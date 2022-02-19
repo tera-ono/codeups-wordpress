@@ -1,6 +1,31 @@
 <?php get_header(); ?>
 <main>
-  <h1 class="p-test">トップページです</h1>
+
+  <section class="l-topMv p-topMv">
+    <!-- Slider main container -->
+    <div class="swiper topMv__swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <picture>
+            <source media="(max-width: 767px)" srcset="<?php echo esc_url(get_template_directory_uri() . "/assets/images/sp/mv1-sp.jpg") ?>">
+            <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri() . "/assets/images/pc/mv1.jpg") ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/pc/mv1.jpg") ?>" alt="本社ビル">
+          </picture>
+        </div>
+
+        <div class="swiper-slide">
+
+        </div>
+
+        <div class="swiper-slide">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.l-topMv p-topMv -->
 
 
 

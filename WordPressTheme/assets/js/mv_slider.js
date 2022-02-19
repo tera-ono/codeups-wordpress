@@ -1,7 +1,7 @@
 /*******************************************
 メインビューのスワイパー
 *******************************************/
-const swiper = new Swiper('.mv__swiper', {
+const swiper = new Swiper('.topMv__swiper', {
   // Optional parameters
 
   // スライド方向
