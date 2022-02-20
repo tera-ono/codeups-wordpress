@@ -1,9 +1,4 @@
 // alert('hello');
-const textWrap = document.querySelectorAll('.p-test');
-textWrap.forEach((t) => {
-  t.innerHTML = t.textContent.replace(/\S/g, '<span>$&</span>')
-});
-
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
   // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
@@ -95,5 +90,19 @@ MV以下になると表れ以下追従
        $('.js-header').removeClass('is-opacity');
      }
    });
+
+
+   /* ---トップページのメインビューを画面の高さいっぱいに表示する記述(100vh指定だと、iPhoneのSafariはアドレスバーが表示されアドレスバーの高さだけメインビューが画面の下にはみ出してしまう為) 
+
+   ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.p-topMvと .topMv__swiper の.swiper-slideの高さを指定します。 --- */
+   $(document).ready(function () {
+    var windowHeight = $(window).height();
+    $(".p-topMv,.p-topMv__swiper .swiper-slide").height(windowHeight);
+  });
+  $(window).resize(function () {
+    var windowHeight = $(window).height();
+    $(".js-topMv-swiper").height(windowHeight);
+  });
+
 
 });

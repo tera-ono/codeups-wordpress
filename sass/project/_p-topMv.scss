@@ -1,10 +1,83 @@
 @use "global" as *;
 
-.p-topMv {
-
+.p-topMv__title {
+  position: absolute;
+  max-width: 600px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: $white;
+  @include mq("md") {
+    max-width: none;
+  }
 }
 
-.topMv__swiper {
+.p-topMv__mainTitle {
+  font-size: rem(35);
+  font-weight: $bold;
+  line-height: 1;
+  letter-spacing: 0.0178em;
+  @include mq("md") {
+    font-size: rem(70);
+    letter-spacing: 0.01em;
+  }
+}
+.p-topMv__subTitle {
+  font-size: rem(20);
+  font-weight: $medium;
+  line-height: 1;
+  letter-spacing: 0.025em;
+  margin-top: rem(24);
+  @include mq("md") {
+    font-size: rem(25);
+    letter-spacing: 0.02em;
+  }
+}
+
+
+.p-topMv__swiper .swiper-slide {
+  position: relative;
   width: 100%;
-  height: 100vh;
+  overflow: hidden;
+}
+
+.p-topMv__swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- 画像の上の薄黒いマスク --- */
+.p-topMv__swiper .swiper-slide::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.2);
+  z-index: 2;
+}
+
+
+// 現在表示中のスライド
+.p-topMv__swiper .swiper-slide-active img,
+// ループで最初と最後のスライドに切り替わる時に付くクラス
+.p-topMv__swiper .swiper-slide-duplicate-active img,
+// 次のスライド
+.p-topMv__swiper .swiper-slide-prev img {
+  animation: zoomUp 10s ease-in;
+}
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
 }

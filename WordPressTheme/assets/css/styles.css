@@ -184,6 +184,16 @@ select::-ms-expand {
   }
 }
 
+.l-topNews {
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .l-topNews {
+    margin-top: 2rem;
+  }
+}
+
 .l-breadcrumbs {
   margin-top: 65px;
   margin-top: 4.0625rem;
@@ -1323,11 +1333,108 @@ select::-ms-expand {
   font-weight: 700;
 }
 
-.topMv__swiper {
+.p-topMv__title {
+  position: absolute;
+  max-width: 600px;
   width: 100%;
-  height: 100vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .p-topMv__title {
+    max-width: none;
+  }
 }
 
+.p-topMv__mainTitle {
+  font-size: 35px;
+  font-size: 2.1875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.0178em;
+}
+@media screen and (min-width: 768px) {
+  .p-topMv__mainTitle {
+    font-size: 4.375rem;
+    letter-spacing: 0.01em;
+  }
+}
+
+.p-topMv__subTitle {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.025em;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-topMv__subTitle {
+    font-size: 1.5625rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+.p-topMv__swiper .swiper-slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.p-topMv__swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* --- 画像の上の薄黒いマスク --- */
+.p-topMv__swiper .swiper-slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, .2);
+  z-index: 2;
+}
+
+.p-topMv__swiper .swiper-slide-active img,
+.p-topMv__swiper .swiper-slide-duplicate-active img,
+.p-topMv__swiper .swiper-slide-prev img {
+  -webkit-animation: zoomUp 10s ease-in;
+          animation: zoomUp 10s ease-in;
+}
+
+@-webkit-keyframes zoomUp {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
+@keyframes zoomUp {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
 /* --- タブレットサイズでブロックになり改行する --- */
 .u-block-tab {
   display: inline;
