@@ -13,6 +13,15 @@
     flex: 0 0 31.8181%;
   }
 }
+
+/* --- sp時の余白 タブレット時に初期化 --- */
+.c-cards__item + .c-cards__item {
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: auto;
+  }
+}
+
 .c-cards__item:not(:nth-of-type(3n + 1)) {
   @include mq("md") {
     margin-left: 2.2727%;

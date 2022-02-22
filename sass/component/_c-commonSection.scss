@@ -1,0 +1,33 @@
+@use "global" as *;
+
+/* --- タブレット以降背景2色 --- */
+.c-commonSection__item {
+  margin-top: rem(48);
+  background: $gray;
+  @include mq("md") {
+    margin-top: rem(43);
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    background: linear-gradient(to left, $gray 0%, $gray 70%, transparent 70%, transparent 100% );
+  }
+}
+
+
+/* --- 偶数 ---   (セクションが分かれており、同じブロック内に無いため、本来の偶数であるevenを付けると逆になってしまうため oddにしている)*/
+.c-commonSection:nth-of-type(odd) .c-commonSection__item {
+  @include mq("md") {
+    background: linear-gradient(to right, $gray 0%, $gray 70%, transparent 70%, transparent 100% );
+  }
+}
+
+
+.c-commonSection:nth-of-type(odd) .c-commonSection-item__inner {
+  @include mq("md") {
+    flex-direction: row-reverse;
+  }
+}
+
+.c-commonSection:nth-child(odd) .c-commonSection-item__swiperContainer, .c-commonSection-item__img {
+  margin-right: 0;
+  margin-left: 2.909%;
+}

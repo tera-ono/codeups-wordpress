@@ -56,12 +56,25 @@
 }
 
 @media (any-hover: hover) {
-  .p-header-nav__items li:last-of-type a:hover span {
+  .p-header-nav__items li:last-of-type a:hover span, .p-header-nav__items li:last-of-type a:focus span {
     color: $white;
     transition: 0.1s ease-in;
     transition: color $transition-duration linear;
   }
-  .p-header-nav__items li:last-of-type a:hover::before {
+  .p-header-nav__items li:last-of-type a:hover::before , .p-header-nav__items li:last-of-type a:focus::before {
+    transform: translateX(0);
+    transition: transform $transition-duration linear;
+  }
+}
+
+//スマホなどホバーが対応していないデバイスの時は、activeでタップ中のみスタイルが反映する！！
+@media (any-hover: none) {
+	.p-header-nav__items li:last-of-type a:active span {
+    color: $white;
+    transition: 0.1s ease-in;
+    transition: color $transition-duration linear;
+  }
+  .p-header-nav__items li:last-of-type a:active::before {
     transform: translateX(0);
     transition: transform $transition-duration linear;
   }

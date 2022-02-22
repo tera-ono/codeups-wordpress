@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.p-topNews__inner  {
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.p-topNews__btn {
+  text-align: center;
+  margin-top: rem(28);
+  @include mq("md") {
+    flex: 0 0 auto;
+    margin-top: 0;
+    margin-left: auto;
+  }
+}

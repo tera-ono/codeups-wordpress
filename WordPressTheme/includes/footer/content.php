@@ -1,5 +1,5 @@
 <!-- お問い合わせページ以外に表示されるセクション footer.phpに含める -->
-<?php get_template_part('includes/contact_section'); ?>
+<?php get_template_part('includes/footer/contact_section'); ?>
 
 
 <!-- フッターの中身 -->

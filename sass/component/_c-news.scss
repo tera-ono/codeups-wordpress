@@ -1,10 +1,14 @@
 @use "global" as *;
 .c-news {
   color: $white;
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .c-news__meta {
-  
+  flex: 0 0 auto;
 }
 
 .c-news__time {
@@ -30,4 +34,10 @@
   font-weight: $regular;
   line-height: 1.5;
   margin-top: rem(10);
+  @include mq("md") {
+    flex: 1 1 auto;
+    margin-top: 0;
+    margin-left: rem(61);
+    margin-right: rem(48);
+  }
 }

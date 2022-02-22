@@ -1,0 +1,19 @@
+@use "global" as *;
+
+.p-topContent__items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: rem(48);
+  @include mq("md") {
+    margin-top: rem(100);
+  }
+}
+
+.p-topContent__item {
+  width: 50%;
+  @include mq("md") {
+    width: 25%;
+  }
+}
+
