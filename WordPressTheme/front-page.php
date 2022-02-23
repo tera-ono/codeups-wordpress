@@ -63,7 +63,7 @@
   </section>
   <!-- /l-topNews p-topNews -->
 
-  <section class="l-topContent p-topContent">
+  <section class="l-topContent p-topContent p-bgLine">
     <div class="p-topContent__title l-inner">
       <h3 class="p-topContent__title c-sectionTitle c-sectionTitle__sub--left">
         事業内容

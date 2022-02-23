@@ -1437,6 +1437,49 @@ select::-ms-expand {
      object-fit: cover;
 }
 
+.p-bgLine {
+  position: relative;
+}
+
+.p-bgLine::before,
+.p-bgLine::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+
+.p-bgLine::before {
+  top: -30px;
+  top: -1.875rem;
+  left: 0;
+  height: 679.29px;
+  height: 42.455625rem;
+  background: linear-gradient(to right top, transparent 50%, #F9F871 50.05%, #F9F871 calc(50.05% + 1px), transparent calc(50.05% - 1px));
+}
+@media screen and (min-width: 768px) {
+  .p-bgLine::before {
+    top: -8.125rem;
+    height: 80rem;
+  }
+}
+
+.p-bgLine::after {
+  top: 610px;
+  top: 38.125rem;
+  left: 0;
+  height: 1390px;
+  height: 86.875rem;
+  background: linear-gradient(to right bottom, transparent 50%, #F9F871 50.05%, #F9F871 calc(50.05% + 1px), transparent calc(50.05% - 1px));
+}
+@media screen and (min-width: 768px) {
+  .p-bgLine::after {
+    top: 75rem;
+    height: 80rem;
+  }
+}
+
 .p-drawer {
   position: fixed;
   top: 0;
@@ -1660,7 +1703,15 @@ select::-ms-expand {
   height: 50px;
   height: 3.125rem;
   background-color: rgba(17, 17, 17, .5);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   z-index: 200;
+}
+
+.p-header.is-opacity {
+  background-color: #111111;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .p-header__inner {

@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.p-bgLine {
+  position: relative;
+}
+
+.p-bgLine::before,
+.p-bgLine::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+
+.p-bgLine::before {
+  top: rem(-30);
+  left: 0;
+  height: rem(679.29);
+  background: linear-gradient(
+    to right top,
+    transparent 50%,
+    $accent 50.05%,
+    $accent calc(50.05% + 1px),
+    transparent calc(50.05% - 1px)
+  );
+  @include mq("md") {
+    top: rem(-130);
+    height: rem(1280);
+  }
+}
+
+.p-bgLine::after {
+  top: rem(610);
+  left: 0;
+  height: rem(1390);
+  background: linear-gradient(
+    to right bottom,
+    transparent 50%,
+    $accent 50.05%,
+    $accent calc(50.05% + 1px),
+    transparent calc(50.05% - 1px)
+  );
+  @include mq("md") {
+    top: rem(1200);
+    height: rem(1280);
+  }
+}

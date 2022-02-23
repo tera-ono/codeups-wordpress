@@ -7,7 +7,12 @@
   width: 100%;
   height: rem(50);
   background-color: rgba(17, 17, 17, 0.5);
+  transition: background-color $transition-duration ease-in-out;
   z-index: $header_z-index;
+}
+.p-header.is-opacity {
+  background-color: rgba(17, 17, 17, 1);
+  transition: background-color $transition-duration ease-in-out;
 }
 
 .p-header__inner {

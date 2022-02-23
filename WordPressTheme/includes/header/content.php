@@ -1,5 +1,5 @@
 <!-- headerの中身 -->
-<header class="l-header p-header">
+<header class="l-header p-header js-header">
 	<div class="p-header__inner">
 
 		<a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo">

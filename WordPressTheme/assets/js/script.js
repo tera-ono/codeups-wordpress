@@ -1,8 +1,9 @@
 // alert('hello');
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
-  // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
-
+  /*******************************************
+  スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動)
+  *******************************************/
   $(document).on('click', 'a[href*="#"]', function () {
     let time = 400;
     let header = $('header').innerHeight();
@@ -74,35 +75,41 @@ MV以下になると表れ以下追従
     });
 
 
-    
-  //  ヘッダーの高さ
- var header_height = $('.js-header').innerHeight();
- //  MVの高さ
-  var mv_height = $('.js-mv').innerHeight();
- //  ヘッダーの下端がMVの下端に重なった時の高さ
-  var target = mv_height - header_height;
- //  console.log(target);
-   $(window).scroll(function() {
-     
-     if($(this).scrollTop() > target) {
-       $('.js-header').addClass('is-opacity');
-     } else {
-       $('.js-header').removeClass('is-opacity');
-     }
-   });
 
 
-   /* ---トップページのメインビューを画面の高さいっぱいに表示する記述(100vh指定だと、iPhoneのSafariはアドレスバーが表示されアドレスバーの高さだけメインビューが画面の下にはみ出してしまう為) 
+/*******************************************
+トップページのメインビューを画面の高さいっぱいに表示する記述(100vh指定だと、iPhoneのSafariはアドレスバーが表示されアドレスバーの高さだけメインビューが画面の下にはみ出してしまう為) 
 
-   ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.p-topMvと .topMv__swiper の.swiper-slideの高さを指定します。 --- */
-   $(document).ready(function () {
+ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.p-topMvと .topMv__swiper の.swiper-slideの高さを指定します。
+*******************************************/
+  $(document).ready(function () {
     var windowHeight = $(window).height();
     $(".p-topMv,.p-topMv__swiper .swiper-slide").height(windowHeight);
   });
   $(window).resize(function () {
     var windowHeight = $(window).height();
     $(".js-topMv-swiper").height(windowHeight);
+
+    
   });
 
+
+  /*******************************************
+  ヘッダーがスクロールしてMVを通り過ぎるとopacityが1になる
+  *******************************************/
+  //  ヘッダーの高さ
+  var header_height = $('.js-header').innerHeight();
+  //  MVの高さ
+  var mv_height = $(window).height();
+  //  ヘッダーの下端がMVの下端に重なった時の高さ
+  var target = mv_height - header_height;
+    console.log(mv_height);
+  $(window).scroll(function() {
+    if($(this).scrollTop() > target) {
+      $('.js-header').addClass('is-opacity');
+    } else {
+      $('.js-header').removeClass('is-opacity');
+    }
+  });
 
 });
