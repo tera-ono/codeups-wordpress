@@ -332,6 +332,7 @@ select::-ms-expand {
   }
 }
 .c-card {
+  position: relative;
   display: block;
   background-color: #FFFFFF;
   -webkit-transition: background-color 0.3s linear;
@@ -636,11 +637,14 @@ select::-ms-expand {
 .c-commonSection-item__body {
   margin-top: 30px;
   margin-top: 1.875rem;
+  padding-bottom: 18px;
+  padding-bottom: 1.125rem;
   color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
   .c-commonSection-item__body {
     margin-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -929,6 +933,38 @@ select::-ms-expand {
     transition: 0.1s ease-in;
   }
 }
+.c-newIcon {
+  position: absolute;
+  top: -5%;
+  left: -3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  width: 3.75rem;
+  height: 60px;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-color: #FFBA6A;
+  z-index: 2;
+}
+
+.c-newIcon__text {
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.125em;
+  color: #333333;
+}
+
 .c-news {
   color: #FFFFFF;
 }
@@ -1111,16 +1147,56 @@ select::-ms-expand {
   width: 2.8125rem;
   height: 45px;
   height: 2.8125rem;
-  z-index: 2;
-  -webkit-transition: opacity 0.3s linear;
-  transition: opacity 0.3s linear;
+  z-index: 100;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+
+.c-scrollTop__arrow {
+  position: absolute;
+  display: inline-block;
+  top: 64%;
+  left: 50%;
+  width: 16.5px;
+  width: 1.03125rem;
+  height: 16.5px;
+  height: 1.03125rem;
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+          transform: translate(-50%, -50%) rotate(135deg);
+  border-left: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  -webkit-transition: border-color 0.3s linear;
+  transition: border-color 0.3s linear;
 }
 
 @media (any-hover: hover) {
-  .c-scrollTop:hover {
-    opacity: 0.7;
-    -webkit-transition: opacity 0.3s linear;
-    transition: opacity 0.3s linear;
+  .c-scrollTop:hover,
+.c-scrollTop:focus {
+    background-color: #333333;
+    -webkit-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+  }
+
+  .c-scrollTop:hover .c-scrollTop__arrow,
+.c-scrollTop:focus .c-scrollTop__arrow {
+    border-color: #FFFFFF;
+    -webkit-transition: border-color 0.3s linear;
+    transition: border-color 0.3s linear;
+  }
+}
+@media (any-hover: none) {
+  .c-scrollTop:active {
+    background-color: #333333;
+    -webkit-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+  }
+
+  .c-scrollTop:active .c-scrollTop__arrow {
+    border-color: #FFFFFF;
+    -webkit-transition: border-color 0.3s linear;
+    transition: border-color 0.3s linear;
   }
 }
 .c-sectionTitle {
@@ -1466,8 +1542,8 @@ select::-ms-expand {
 }
 
 .p-bgLine::after {
-  top: 610px;
-  top: 38.125rem;
+  top: 625px;
+  top: 39.0625rem;
   left: 0;
   height: 1390px;
   height: 86.875rem;
@@ -1475,7 +1551,7 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .p-bgLine::after {
-    top: 75rem;
+    top: 76.25rem;
     height: 80rem;
   }
 }
@@ -1902,6 +1978,7 @@ select::-ms-expand {
   text-align: center;
   z-index: 2;
   color: #FFFFFF;
+  text-shadow: 1px 2px 7px #333333;
 }
 @media screen and (min-width: 768px) {
   .p-topMv__title {
@@ -1918,7 +1995,7 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .p-topMv__mainTitle {
-    font-size: 4.375rem;
+    font-size: 5rem;
     letter-spacing: 0.01em;
   }
 }
@@ -1934,7 +2011,7 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .p-topMv__subTitle {
-    font-size: 1.5625rem;
+    font-size: 2.1875rem;
     letter-spacing: 0.02em;
   }
 }

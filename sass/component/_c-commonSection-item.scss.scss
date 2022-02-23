@@ -78,9 +78,11 @@
 
 .c-commonSection-item__body {
   margin-top: rem(30);
+  padding-bottom: rem(18);
   color: $white;
   @include mq("md") { 
     margin-top: 0;
+    padding-bottom: 0;
   }
 }
 

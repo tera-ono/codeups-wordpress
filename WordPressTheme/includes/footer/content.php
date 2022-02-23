@@ -31,5 +31,5 @@
 
 <!-- スクロールトップボタン -->
 <div class="c-scrollTop js-scrollTop">
-  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/common/scrollTop.png'); ?>" alt="">
+ <span class="c-scrollTop__arrow"></span>
 </div>

@@ -171,39 +171,6 @@
   </section>
   <!-- /.l-commonSection c-commonSection -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- セクションタイトル -->
-  <!-- <div class="l-inner">
-    <h3 class="c-sectionTitle">
-      お問い合わせ
-      <span class="c-sectionTitle__sub">Contact</span>
-    </h3>
-  </div>
-
-  <div class="l-inner">
-    <h3 class="c-sectionTitle">
-      制作実績
-      <span class="c-sectionTitle__sub c-sectionTitle__sub--right">Works</span>
-    </h3>
-  </div> -->
-
-
-
-
-
-
-
   <section class="l-topBlog p-topBlog">
     <div class="l-inner">
       <h3 class="p-topBlog__title c-sectionTitle">
@@ -216,14 +183,21 @@
           'post_type' => 'blog',
           'posts_per_page' => 3,
         );
-        $posts = get_posts($args);
-        foreach ($posts as $post) : setup_postdata($post);
+        $new_query = new WP_Query($args);
         ?>
+        <?php if ($new_query->have_posts()) : ?>
+          <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
 
-          <!-- パーツ化したブログカード -->
-          <?php get_template_part('includes/blog_card'); ?>
-
-        <?php endforeach;
+          <!-- 1番目の記事だったら -->
+            <?php if ($new_query->current_post == 0) : ?>
+              <?php get_template_part('includes/newIcon_blog_card'); ?>
+              <!-- それ以降（2番目からの出力） -->
+              <?php else : ?>
+                <!-- パーツ化したブログカード -->
+                <?php get_template_part('includes/blog_card'); ?>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endif;
         wp_reset_postdata(); ?>
       </div>
       <!-- /.c-cards -->

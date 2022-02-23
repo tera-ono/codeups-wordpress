@@ -31,7 +31,7 @@
 }
 
 .p-bgLine::after {
-  top: rem(610);
+  top: rem(625);
   left: 0;
   height: rem(1390);
   background: linear-gradient(
@@ -42,7 +42,7 @@
     transparent calc(50.05% - 1px)
   );
   @include mq("md") {
-    top: rem(1200);
+    top: rem(1220);
     height: rem(1280);
   }
 }

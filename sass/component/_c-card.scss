@@ -1,5 +1,6 @@
 @use "global" as *;
 .c-card {
+  position: relative;
   display: block;
   background-color: $white;
   transition: background-color $transition-duration linear;

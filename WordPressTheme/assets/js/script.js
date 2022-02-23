@@ -20,13 +20,14 @@ MV以下になると表れ以下追従
 *******************************************/
 
   //  ヘッダーの高さ
- var header_height = $('.js-header').innerHeight();
+  var header_height = $('js-header').innerHeight();
  //  MVの高さ
-  var mv_height = $('.js-mv').innerHeight();
+  var mv_height = $(window).innerHeight();
   //  ヘッダーの下端がMVの下端に重なった時の高さ
   // つまり、ヘッダーでMVが隠れた時の高さ
   var target = mv_height - header_height;
-  var scroll_top = $('.js-scroll-top');
+  //スクロールボタンの要素
+  var scroll_top = $('.js-scrollTop');
   // 最初はボタンを消しておく
   scroll_top.hide();
 
@@ -95,7 +96,7 @@ MV以下になると表れ以下追従
 
 
   /*******************************************
-  ヘッダーがスクロールしてMVを通り過ぎるとopacityが1になる
+  ヘッダーがスクロールしてMVを通り過ぎると背景色の不透明度が1になる
   *******************************************/
   //  ヘッダーの高さ
   var header_height = $('.js-header').innerHeight();

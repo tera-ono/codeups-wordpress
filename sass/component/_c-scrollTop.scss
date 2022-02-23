@@ -5,13 +5,44 @@
   right: rem(31);
   width: rem(45);
   height: rem(45);
-  z-index: 2;
-  transition: opacity $transition-duration linear;
+  z-index: $scrollTop_z-index;
+  background-color: $white;
+  cursor: pointer;
+  transition: background-color $transition-duration linear;
+}
+
+.c-scrollTop__arrow {
+  position: absolute;
+  display: inline-block;
+  top: 64%;
+  left: 50%;
+  width: rem(16.5);
+  height: rem(16.5);
+  transform: translate(-50%, -50%) rotate(135deg);
+  border-left: 2px solid $gray;
+  border-bottom: 2px solid $gray;
+  transition: border-color $transition-duration linear;
 }
 
 @media (any-hover: hover) {
-  .c-scrollTop:hover {
-    opacity: 0.7;
-    transition: opacity $transition-duration linear;
+  .c-scrollTop:hover,
+  .c-scrollTop:focus {
+    background-color: $gray;
+    transition: background-color $transition-duration linear;
+  }
+  .c-scrollTop:hover .c-scrollTop__arrow,
+  .c-scrollTop:focus .c-scrollTop__arrow {
+    border-color: $white;
+    transition: border-color $transition-duration linear;
+  }
+}
+@media (any-hover: none) {
+  .c-scrollTop:active {
+    background-color: $gray;
+    transition: background-color $transition-duration linear;
+  }
+  .c-scrollTop:active .c-scrollTop__arrow {
+    border-color: $white;
+    transition: border-color $transition-duration linear;
   }
 }
