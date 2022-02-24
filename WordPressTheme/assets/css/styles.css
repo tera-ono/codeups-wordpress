@@ -159,6 +159,11 @@ select::-ms-expand {
   display: none;
 }
 
+.l-breadcrumbs {
+  margin-top: 65px;
+  margin-top: 4.0625rem;
+}
+
 .l-commonContact {
   margin-top: 120px;
   margin-top: 7.5rem;
@@ -204,6 +209,26 @@ select::-ms-expand {
   }
 }
 
+.l-news {
+  margin-top: 85px;
+  margin-top: 5.3125rem;
+}
+@media screen and (min-width: 768px) {
+  .l-news {
+    margin-top: 4.3125rem;
+  }
+}
+
+.l-pagination {
+  margin-top: 80px;
+  margin-top: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .l-pagination {
+    margin-top: 6.5rem;
+  }
+}
+
 .l-topBlog {
   margin-top: 99px;
   margin-top: 6.1875rem;
@@ -232,11 +257,6 @@ select::-ms-expand {
   .l-topNews {
     margin-top: 2rem;
   }
-}
-
-.l-breadcrumbs {
-  margin-top: 65px;
-  margin-top: 4.0625rem;
 }
 
 .c-breadcrumbs {
@@ -984,6 +1004,13 @@ select::-ms-expand {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
 }
+@media screen and (min-width: 768px) {
+  .c-news__meta {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 17.875rem;
+            flex: 0 0 17.875rem;
+  }
+}
 
 .c-news__time {
   display: inline-block;
@@ -1018,14 +1045,29 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .c-news__linkTitle {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     margin-top: 0;
-    margin-left: 3.8125rem;
-    margin-right: 3rem;
   }
 }
 
+/* --- お知らせ一覧（デフォルト投稿）の タイトルリンクだけホバー時に黄色 --- */
+@media (any-hover: hover) {
+  .blog .c-news__linkTitle:hover, .blog .c-news__linkTitle:focus {
+    color: #F9F871;
+    opacity: 1;
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
+  }
+}
+@media (any-hover: none) {
+  .blog .c-news__linkTitle:active {
+    color: #F9F871;
+    opacity: 1;
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
+  }
+}
 .c-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1556,6 +1598,111 @@ select::-ms-expand {
   }
 }
 
+.p-commonMv {
+  position: relative;
+  width: 100%;
+  height: 425px;
+  height: 26.5625rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+@media screen and (min-width: 768px) {
+  .p-commonMv {
+    height: 23.125rem;
+  }
+}
+
+.p-commonMv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, .3);
+  z-index: -1;
+}
+
+/* --- お知らせ一覧(デフォルト投稿) --- */
+.blog .p-commonMv {
+  background-image: url("../images/sp/news-mv-sp.jpg");
+}
+@media screen and (min-width: 768px) {
+  .blog .p-commonMv {
+    background-image: url("../images/pc/news-mv-pc.jpg");
+  }
+}
+
+/* --- 事業内容 content --- */
+.page-id-16 .p-commonMv {
+  background-image: url("../images/sp/content-mv-sp.jpg");
+}
+@media screen and (min-width: 768px) {
+  .page-id-16 .p-commonMv {
+    background-image: url("../images/pc/content-mv-pc.jpg");
+  }
+}
+
+/* --- 制作実績アーカイブ works--- */
+.post-type-archive-works .p-commonMv {
+  background-image: url("../images/sp/works-mv-sp.jpg");
+}
+@media screen and (min-width: 768px) {
+  .post-type-archive-works .p-commonMv {
+    background-image: url("../images/pc/works-mv-pc.jpg");
+  }
+}
+
+/* --- 企業概要 overview--- */
+.page-id-18 .p-commonMv {
+  background-image: url("../images/sp/overview-mv-sp.jpg");
+}
+@media screen and (min-width: 768px) {
+  .page-id-18 .p-commonMv {
+    background-image: url("../images/pc/overview-mv-pc.jpg");
+  }
+}
+
+/* --- ブログアーカイブ blog --- */
+.post-type-archive-blog .p-commonMv {
+  background-image: url("../images/sp/blog-mv-sp.jpg");
+}
+@media screen and (min-width: 768px) {
+  .post-type-archive-blog .p-commonMv {
+    background-image: url("../images/pc/blog-mv-pc.jpg");
+  }
+}
+
+/* --- お問い合わせ contact --- */
+.page-id-10 .p-commonMv {
+  background-image: url("../images/sp/contact-mv-sp.jpg");
+}
+@media screen and (min-width: 768px) {
+  .page-id-10 .p-commonMv {
+    background-image: url("../images/pc/contact-mv-pc.jpg");
+  }
+}
+
+.p-commonMv__title {
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06666em;
+  color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .p-commonMv__title {
+    font-size: 2.1875rem;
+    letter-spacing: 0.057142em;
+  }
+}
+
 .p-drawer {
   position: fixed;
   top: 0;
@@ -1832,6 +1979,29 @@ select::-ms-expand {
   .p-header__nav {
     display: block;
   }
+}
+
+.p-news__inner {
+  max-width: 540px;
+  max-width: 33.75rem;
+  width: 100%;
+  height: inherit;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 768px) {
+  .p-news__inner {
+    max-width: 910px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.p-news__item:not(:first-of-type) {
+  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .p-test {

@@ -1,7 +1,7 @@
 <!-- ページが1ページ以上あれば以下を表示 -->
 <?php if (paginate_links()) : ?>
       <!-- pagination -->
-      <div class="c-pagination">
+      <div class="l-pagination c-pagination">
         <?php
         echo
         paginate_links(

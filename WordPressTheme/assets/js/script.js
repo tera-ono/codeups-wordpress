@@ -14,41 +14,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     return false;
   });
 
-  /*******************************************
-スクロールトップボタン
-MV以下になると表れ以下追従
-*******************************************/
 
-  //  ヘッダーの高さ
-  var header_height = $('js-header').innerHeight();
- //  MVの高さ
-  var mv_height = $(window).innerHeight();
-  //  ヘッダーの下端がMVの下端に重なった時の高さ
-  // つまり、ヘッダーでMVが隠れた時の高さ
-  var target = mv_height - header_height;
-  //スクロールボタンの要素
-  var scroll_top = $('.js-scrollTop');
-  // 最初はボタンを消しておく
-  scroll_top.hide();
-
-  // ボタンの表示設定
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > target) {
-      // MVの高さ以上のスクロールでボタンを表示
-      scroll_top.fadeIn();
-    } else {
-      // 画面がMVの高さより上ならボタンを非表示
-      scroll_top.fadeOut();
-    }
-  });
-
-  // ボタンをクリックしたらスクロールして上に戻る
-  scroll_top.click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 400, 'swing');
-    return false;
-  });
 
 
 
@@ -101,16 +67,48 @@ MV以下になると表れ以下追従
   //  ヘッダーの高さ
   var header_height = $('.js-header').innerHeight();
   //  MVの高さ
-  var mv_height = $(window).height();
+  var mv_height1 = $(window).height();
+  var mv_height2 = $('.js-commonMv').height();
   //  ヘッダーの下端がMVの下端に重なった時の高さ
-  var target = mv_height - header_height;
-    console.log(mv_height);
+  var target1 = mv_height1 - header_height;
+  var target2 = mv_height2 - header_height;
+    // console.log(mv_height1);
   $(window).scroll(function() {
-    if($(this).scrollTop() > target) {
+    if($(this).scrollTop() > target1 || $(this).scrollTop() > target2 ) {
       $('.js-header').addClass('is-opacity');
     } else {
       $('.js-header').removeClass('is-opacity');
     }
+  });
+
+  /*******************************************
+スクロールトップボタン
+MV以下になると表れ以下追従
+*******************************************/
+// target1,2は上で変数宣言済み
+ 
+  //スクロールボタンの要素
+  var scroll_top = $('.js-scrollTop');
+  // 最初はボタンを消しておく
+  scroll_top.hide();
+
+  // ボタンの表示設定
+  $(window).scroll(function () {
+    if($(this).scrollTop() > target1 || $(this).scrollTop() > target2 ) {
+      // MVの高さ以上のスクロールでボタンを表示
+      scroll_top.fadeIn();
+    } else {
+      // 画面がMVの高さより上ならボタンを非表示
+      scroll_top.fadeOut();
+    }
+  });
+
+  // ボタンをクリックしたらスクロールして上に戻る
+  scroll_top.click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 400, 'swing');
+    return false;
   });
 
 });

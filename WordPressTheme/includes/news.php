@@ -1,6 +1,6 @@
 <!-- 使い回せるお知らせのパーツ -->
 
-<div class="c-news">
+<div class="p-news__item c-news">
   <div class="c-news__meta">
     <time class="c-news__time" datetime="<?php the_time('c'); ?>">
       <?php the_time('Y.m.d'); ?>

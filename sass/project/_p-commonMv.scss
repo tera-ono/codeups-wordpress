@@ -1,0 +1,87 @@
+@use "global" as *;
+
+.p-commonMv {
+  position: relative;
+  width: 100%;
+  height: rem(425);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  @include mq("md") {
+    height: rem(370);
+  }
+}
+.p-commonMv::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.3);
+  z-index: -1;
+}
+
+/* --- お知らせ一覧(デフォルト投稿) --- */
+.blog .p-commonMv {
+  background-image: url('../images/sp/news-mv-sp.jpg'); 
+  @include mq("md") {
+    background-image: url('../images/pc/news-mv-pc.jpg');
+  }
+}
+
+/* --- 事業内容 content --- */
+.page-id-16 .p-commonMv {
+  background-image: url('../images/sp/content-mv-sp.jpg'); 
+  @include mq("md") {
+    background-image: url('../images/pc/content-mv-pc.jpg');
+  }
+}
+
+/* --- 制作実績アーカイブ works--- */
+.post-type-archive-works .p-commonMv {
+  background-image: url('../images/sp/works-mv-sp.jpg'); 
+  @include mq("md") {
+    background-image: url('../images/pc/works-mv-pc.jpg');
+  }
+}
+
+/* --- 企業概要 overview--- */
+.page-id-18 .p-commonMv {
+  background-image: url('../images/sp/overview-mv-sp.jpg'); 
+  @include mq("md") {
+    background-image: url('../images/pc/overview-mv-pc.jpg');
+  }
+}
+
+/* --- ブログアーカイブ blog --- */
+.post-type-archive-blog .p-commonMv {
+  background-image: url('../images/sp/blog-mv-sp.jpg'); 
+  @include mq("md") {
+    background-image: url('../images/pc/blog-mv-pc.jpg');
+  }
+}
+
+/* --- お問い合わせ contact --- */
+.page-id-10 .p-commonMv {
+  background-image: url('../images/sp/contact-mv-sp.jpg'); 
+  @include mq("md") {
+    background-image: url('../images/pc/contact-mv-pc.jpg');
+  }
+}
+
+.p-commonMv__title {
+  display: grid;
+  place-items: center;
+  font-size: rem(30);
+  font-weight: $bold;
+  line-height: 1;
+  letter-spacing: 0.06666em;
+  color: $white;
+  @include mq("md") {
+    font-size: rem(35);
+    letter-spacing: 0.057142em;
+  }
+}

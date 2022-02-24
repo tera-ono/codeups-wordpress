@@ -3,7 +3,7 @@
 	<div class="p-header__inner">
 
 		<a href="<?php echo esc_url(home_url('/')); ?>" class="p-header__logo">
-			<img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/logo.svg"); ?>" alt="CodeUpsロゴ">
+			<h1><img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/logo.svg"); ?>" alt="CodeUpsロゴ"></h1>
 		</a>
 		<!-- グローバルメニュー -->
 		<nav class="p-header__nav p-header-nav">
@@ -37,7 +37,15 @@
 <!-- ドロワーメニュー パーツ化 -->
 <?php get_template_part('includes/header/drawer'); ?>
 
-
+<!-- トップページ、個別投稿ページ、お問い合わせ完了ページ、404以外 でメインビュー表示 -->
+<?php if(! ( is_front_page() || is_single() || is_page('thanks') || is_404())) : ?>
+<section class="p-commonMv js-commonMv">
+	<h2 class="p-commonMv__title l-inner">
+		<?php wp_title(''); ?>
+	</h2>
+</section>
+<?php endif; ?>
+<!-- /.l-commonMv p-commonMv -->
 
 <!-- トップページ&お問い合わせ完了ページ&404ページ以外はパンくずリストを表示 -->
 <?php if (!((is_front_page()) || is_404() || is_page('thanks'))) : ?>
