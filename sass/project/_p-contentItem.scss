@@ -1,0 +1,87 @@
+@use "global" as *;
+.p-contentItem {
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+/* --- 偶数のアイテムは逆並び --- */      
+.p-contentItem:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.p-contentItem:not(:first-of-type) {
+  margin-top: rem(48);
+  @include mq("md") {
+    margin-top: rem(104);
+  }
+}
+
+.p-contentItem__img {
+  position: relative;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  @include mq("md") {
+    flex: 0 0 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.p-contentItem__img::before {
+  content: "";
+  display: block;
+  padding-top: 69.786%;
+  @include mq("md") {
+    padding-top: 66.7272%;
+  }
+}
+.p-contentItem__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-position: center;
+  object-fit: cover;
+}
+
+.p-contentItem:nth-of-type(odd) .p-contentItem__body {
+ @include mq("md") {
+   margin-left: rem(30);
+ }
+}
+.p-contentItem:nth-of-type(even) .p-contentItem__body {
+  @include mq("md") {
+    margin-right: rem(30);
+  }
+}
+
+.p-contentItem__title {
+  margin-top: rem(24);
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $white;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(25);
+    letter-spacing: 0.02em;
+    text-align: start;
+  }
+}
+
+.p-contentItem__text {
+  margin-top: rem(24);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(23.17 / 16);
+  letter-spacing: 0.125em;
+  color: $white;
+  @include mq("md") {
+    margin-top: rem(40);
+    line-height: calc(35 / 16);
+    letter-spacing: 0.0312em;
+  }
+}
