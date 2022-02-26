@@ -40,8 +40,10 @@
   }
 }
 
-/* --- 制作実績アーカイブ works--- */
-.post-type-archive-works .p-commonMv {
+/* --- 制作実績アーカイブ works
+カスタム投稿一覧ページ, タクソノミーごとのアーカイブ
+--- */
+.post-type-archive-works .p-commonMv, .tax-work_genre .p-commonMv {
   background-image: url('../images/sp/works-mv-sp.jpg'); 
   @include mq("md") {
     background-image: url('../images/pc/works-mv-pc.jpg');

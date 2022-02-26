@@ -8,6 +8,9 @@
   background-color: transparent;
   padding: rem(3) rem(10);
   transition: $transition-duration linear;
+  @include mq("md") {
+    padding: rem(3) rem(20);
+  }
 }
 
 .c-termLink.is-active {

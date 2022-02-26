@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.c-termLinks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-termLinks__items {
+  margin-top: rem(16);
+}

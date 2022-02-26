@@ -38,12 +38,17 @@
 <?php get_template_part('includes/header/drawer'); ?>
 
 <!-- トップページ、個別投稿ページ、お問い合わせ完了ページ、404以外 でメインビュー表示 -->
-<?php if(! ( is_front_page() || is_single() || is_page('thanks') || is_404())) : ?>
-<section class="p-commonMv js-commonMv">
-	<h2 class="p-commonMv__title l-inner">
-		<?php wp_title(''); ?>
-	</h2>
-</section>
+<?php if (!(is_front_page() || is_single() || is_page('thanks') || is_404())) : ?>
+	<section class="p-commonMv js-commonMv">
+		<h2 class="p-commonMv__title l-inner">
+			<?php if (is_tax()) {
+				single_term_title();
+			} else {
+				wp_title('');
+			}
+			?>
+		</h2>
+	</section>
 <?php endif; ?>
 <!-- /.l-commonMv p-commonMv -->
 

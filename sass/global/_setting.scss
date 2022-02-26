@@ -47,7 +47,8 @@ $sub-bg: $gray;
 
 body {
   font-family: $base-font-family;
-  background-color: $main-bg;
+  // background-color: $main-bg;
+  background-image: linear-gradient(60deg, #0b0c0c 0%, #083d3d 30%, #070707 100%);
   color: $white;
   /* --- ドロワーメニュー表示時背景スクロール禁止 --- */
   &.is-open {

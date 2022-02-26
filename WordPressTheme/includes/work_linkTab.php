@@ -1,5 +1,5 @@
 <!-- archive-works.phpとtaxonomy-works_genre.phpの内容は同じにしたいので、条件分岐で出力するタブを制御するしテンプレート化する -->
-<div class="c-termLinks">
+<div class="l-termLinks c-termLinks">
   <?php if (is_post_type_archive('works')) : ?>
     <span class="c-termLinks__items c-termLink is-active">すべて</span>
   <?php else : ?>
