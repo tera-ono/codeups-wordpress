@@ -1,4 +1,5 @@
 @use "global" as *;
+/* --- 共通のメインビュー背景画像 --- */    
 
 .p-commonMv {
   position: relative;
@@ -58,8 +59,8 @@
   }
 }
 
-/* --- ブログアーカイブ blog --- */
-.post-type-archive-blog .p-commonMv {
+/* --- ブログアーカイブ blog, タクソノミー毎のアーカイブ --- */
+.post-type-archive-blog .p-commonMv, .tax-blog_category .p-commonMv {
   background-image: url('../images/sp/blog-mv-sp.jpg'); 
   @include mq("md") {
     background-image: url('../images/pc/blog-mv-pc.jpg');

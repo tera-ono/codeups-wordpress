@@ -159,6 +159,16 @@ select::-ms-expand {
   display: none;
 }
 
+.l-blog {
+  margin-top: 70px;
+  margin-top: 4.375rem;
+}
+@media screen and (min-width: 768px) {
+  .l-blog {
+    margin-top: 6.25rem;
+  }
+}
+
 .l-breadcrumbs {
   margin-top: 16px;
   margin-top: 1rem;
@@ -1718,6 +1728,28 @@ select::-ms-expand {
   }
 }
 
+.p-blog__cards {
+  margin-top: 37px;
+  margin-top: 2.3125rem;
+}
+@media screen and (min-width: 768px) {
+  .p-blog__cards {
+    margin-top: 2.5rem;
+  }
+}
+
+.p-blog__cards .c-newIcon {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .p-blog__cards .c-newIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* --- 共通のメインビュー背景画像 --- */
 .p-commonMv {
   position: relative;
   width: 100%;
@@ -1788,12 +1820,12 @@ select::-ms-expand {
   }
 }
 
-/* --- ブログアーカイブ blog --- */
-.post-type-archive-blog .p-commonMv {
+/* --- ブログアーカイブ blog, タクソノミー毎のアーカイブ --- */
+.post-type-archive-blog .p-commonMv, .tax-blog_category .p-commonMv {
   background-image: url("../images/sp/blog-mv-sp.jpg");
 }
 @media screen and (min-width: 768px) {
-  .post-type-archive-blog .p-commonMv {
+  .post-type-archive-blog .p-commonMv, .tax-blog_category .p-commonMv {
     background-image: url("../images/pc/blog-mv-pc.jpg");
   }
 }
