@@ -3,7 +3,8 @@
 .c-commonContact {
   padding-top: rem(67);
   padding-bottom: rem(64);
-  background-image: linear-gradient(to left top, #373333 0%, black 100%);
+  background-color: $sub-bg;
+ 
   @include mq("md") {
     padding-top: rem(148);
     padding-bottom: rem(148);

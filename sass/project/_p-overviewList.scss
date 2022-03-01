@@ -1,0 +1,37 @@
+@use "global" as *;
+
+.p-overviewList__item {
+  display: flex;
+  border-bottom: 1px solid $white;
+  padding-top: rem(17);
+  padding-bottom: rem(19);
+  @include mq("md") {
+    padding-top: rem(28);
+    padding-bottom: rem(30);
+  }
+}
+
+.p-overviewList__title, .p-overviewList__text {
+  font-size: rem(13);
+  font-weight: $regular;
+  line-height: calc(24 / 13);
+  color: $white;
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}
+
+.p-overviewList__title {
+  width: 33.3333%;
+  @include mq("md") {
+    width: 13.92%;
+  }
+}
+
+.p-overviewList__text {
+  width: 66.6666%;
+  @include mq("md") {
+    width: 86%;
+  }
+}

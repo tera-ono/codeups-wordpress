@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.p-overview__map {
+  margin-top: rem(120);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  height: rem(300);
+  overflow: hidden;
+  @include mq("md") {
+    margin-left: initial;
+    margin-right: initial;
+    height: rem(367);
+  }
+}
+
+.p-overview__map iframe {
+  width: 100%;
+  height: 600px;
+  margin-top: rem(-120);
+  @include mq("md") {
+    transform: scale(1.5);
+  }
+}
