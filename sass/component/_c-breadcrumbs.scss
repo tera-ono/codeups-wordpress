@@ -7,17 +7,25 @@
   letter-spacing: 0.0625em;
   color: $white;
 }
-
+/* --- 個別投稿ページのみ --- */
+.single .c-breadcrumbs {
+  margin-top: rem(66);
+}
 .c-breadcrumbs__inner {
   display: flex;
   align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .current-item[property="name"] {
-  max-width: rem(300);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  // max-width: rem(300);
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 }
 
 [property="itemListElement"] {

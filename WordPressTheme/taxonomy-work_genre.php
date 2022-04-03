@@ -10,7 +10,7 @@
             <a href="<?php the_permalink(); ?>" class="p-worksItems__item c-worksItem">
               <div class="c-worksItem__img">
                 <?php get_template_part('includes/thumbnail'); ?>
-                <span class="c-worksItem__term">
+                <span class="c-worksItem__term c-term-tag">
                   <!-- パーツ化したターム名出力 -->
                   <?php get_template_part('includes/term_name'); ?>
                 </span>

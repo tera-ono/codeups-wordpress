@@ -259,6 +259,19 @@ select::-ms-expand {
   }
 }
 
+.l-singleWorks {
+  margin-top: 53px;
+  margin-top: 3.3125rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .l-singleWorks {
+    margin-top: 5.6875rem;
+    margin-bottom: 6.5rem;
+  }
+}
+
 .l-topBlog {
   margin-top: 99px;
   margin-top: 6.1875rem;
@@ -308,6 +321,12 @@ select::-ms-expand {
   color: #FFFFFF;
 }
 
+/* --- 個別投稿ページのみ --- */
+.single .c-breadcrumbs {
+  margin-top: 66px;
+  margin-top: 4.125rem;
+}
+
 .c-breadcrumbs__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -315,14 +334,11 @@ select::-ms-expand {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.current-item[property=name] {
-  max-width: 300px;
-  max-width: 18.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 [property=itemListElement] {
@@ -1342,6 +1358,38 @@ select::-ms-expand {
   }
 }
 
+.c-single-meta {
+  margin-top: 16px;
+  margin-top: 1rem;
+}
+
+.c-single-meta__date {
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.025em;
+}
+
+.c-single-meta__termTag {
+  margin-left: 30px;
+  margin-left: 1.875rem;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.c-term-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  padding: 0.5rem 1.25rem;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.125em;
+}
+
 .c-termLink {
   display: inline-block;
   font-size: 16px;
@@ -1504,14 +1552,6 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   right: 0;
-  display: inline-block;
-  padding: 8px 20px;
-  padding: 0.5rem 1.25rem;
-  font-size: 16px;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.125em;
   color: #FFFFFF;
   background-color: #111111;
 }
@@ -2401,6 +2441,28 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .p-overviewList__text {
     width: 86%;
+  }
+}
+
+.p-singleWorks {
+  color: #FFFFFF;
+}
+
+.p-singleWorks__heading {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.p-singleWorks__heading span {
+  display: inline-block;
+  margin-left: 10px;
+  margin-left: 0.625rem;
+}
+@media screen and (min-width: 768px) {
+  .p-singleWorks__heading {
+    font-size: 1.4375rem;
   }
 }
 
