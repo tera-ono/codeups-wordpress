@@ -12,6 +12,80 @@
       </span>
     </div>
 
+    <!-- サムネイル連動スワイパー -->
+    <div class="p-singleWork__swiperContainer">
+      <!-- Slider main container -->
+      <div class="p-singleWorks__swiper js-slider">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/top-contents1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="swiper-button-next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <div class="p-singleWorks__thumbnail js-thumbnail">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/top-contents1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div><!-- p-singleWork__swiperContainer-->
 
     <div class="p-singleWorks__points">
       <div class="p-singleWorks__point p-singleWorks-point">

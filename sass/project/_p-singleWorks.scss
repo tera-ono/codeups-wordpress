@@ -30,6 +30,87 @@
   }
 }
 
+.p-singleWork__swiperContainer {
+  /* --- はみ出た部分を隠さないと画像が並んでいるので幅がはみ出て見える --- */
+  overflow: hidden;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  margin-top: rem(16);
+  .swiper-slide img {
+    max-width: 100%;
+  }
+  @include mq("md") {
+    margin-right: initial;
+    margin-left: initial;
+    margin-top: rem(32);
+  }
+}
+
+/* --- メイン --- */
+.p-singleWorks__swiper {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 66.9333%;
+    @include mq("md") {
+      padding-top: 53.44%;
+    }
+  }
+  .swiper-wrapper {
+    position: absolute; /* ← swiper.cssと優先順位が干渉するときは工夫してください */
+    top: 0;
+    left: 0;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    width: 30px;
+    height: 30px;
+    background-color: $bg-black;
+    color: $yellow;
+    border-radius: 50%;
+    @include mq("md") {
+      width: 50px;
+      height: 50px;
+      font-size: rem(32);
+    }
+  }
+}
+
+/* --- サムネイル --- */
+.p-singleWorks__thumbnail {
+  margin-top: rem(32);
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.p-singleWorks__thumbnail .swiper-slide {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+}
+
 .p-singleWorks__points {
   margin-top: rem(42);
   @include mq("md") {

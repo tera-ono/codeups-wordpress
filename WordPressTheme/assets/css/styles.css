@@ -2522,6 +2522,101 @@ select::-ms-expand {
   }
 }
 
+.p-singleWork__swiperContainer {
+  /* --- はみ出た部分を隠さないと画像が並んでいるので幅がはみ出て見える --- */
+  overflow: hidden;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  margin-top: 16px;
+  margin-top: 1rem;
+}
+.p-singleWork__swiperContainer .swiper-slide img {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .p-singleWork__swiperContainer {
+    margin-right: 0;
+    margin-right: initial;
+    margin-left: 0;
+    margin-left: initial;
+    margin-top: 2rem;
+  }
+}
+
+/* --- メイン --- */
+.p-singleWorks__swiper {
+  position: relative;
+}
+.p-singleWorks__swiper::before {
+  content: "";
+  display: block;
+  padding-top: 66.9333%;
+}
+@media screen and (min-width: 768px) {
+  .p-singleWorks__swiper::before {
+    padding-top: 53.44%;
+  }
+}
+.p-singleWorks__swiper .swiper-wrapper {
+  position: absolute;
+  /* ← swiper.cssと優先順位が干渉するときは工夫してください */
+  top: 0;
+  left: 0;
+}
+.p-singleWorks__swiper img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.p-singleWorks__swiper .swiper-button-prev, .p-singleWorks__swiper .swiper-button-next {
+  width: 30px;
+  height: 30px;
+  background-color: #111111;
+  color: #FFEA2E;
+  border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+  .p-singleWorks__swiper .swiper-button-prev, .p-singleWorks__swiper .swiper-button-next {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+
+/* --- サムネイル --- */
+.p-singleWorks__thumbnail {
+  margin-top: 32px;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .p-singleWorks__thumbnail {
+    margin-top: 2.5rem;
+  }
+}
+
+.p-singleWorks__thumbnail .swiper-slide {
+  position: relative;
+}
+.p-singleWorks__thumbnail .swiper-slide::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.p-singleWorks__thumbnail .swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-singleWorks__points {
   margin-top: 42px;
   margin-top: 2.625rem;
