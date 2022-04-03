@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="p-singleWorks l-singleWorks">
-  <div class="p-singleWorks__inner l-inner">
+  <div class="p-singleWorks__inner">
     <h2 class="p-singleWorks__heading">
       <?php the_title(); ?>様 <span>製作実績</span>
     </h2>
@@ -12,6 +12,27 @@
       </span>
     </div>
 
+
+    <div class="p-singleWorks__points">
+      <div class="p-singleWorks__point p-singleWorks-point">
+        <p class="p-singleWorks-point__title">制作のポイント</p>
+        <p class="p-singleWorks-point__text">
+          <?php the_field('create'); ?>
+        </p>
+      </div>
+      <div class="p-singleWorks__point p-singleWorks-point">
+        <p class="p-singleWorks-point__title">デザインのポイント</p>
+        <p class="p-singleWorks-point__text">
+          <?php the_field('design'); ?>
+        </p>
+      </div>
+      <div class="p-singleWorks__point p-singleWorks-point">
+        <p class="p-singleWorks-point__title">その他</p>
+        <p class="p-singleWorks-point__text">
+          <?php the_field('other'); ?>
+        </p>
+      </div>
+    </div>
   </div>
   <!-- ."p-singleWorks__inner l-inner -->
 </div>

@@ -3,6 +3,19 @@
 .p-singleWorks {
   color: $white;
 }
+
+.p-singleWorks__inner {
+  max-width: rem(540); //状況によって変える必要があるかも
+  margin: 0 auto;
+  padding-right: $padding-sp;
+  padding-left: $padding-sp;
+  @include mq("md") {
+    max-width: 801px + $padding-pc * 2;
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
+}
+
 .p-singleWorks__heading {
   font-size: rem(20);
   font-weight: $regular;
@@ -17,3 +30,16 @@
   }
 }
 
+.p-singleWorks__points {
+  margin-top: rem(42);
+  @include mq("md") {
+    margin-top: rem(103);
+  }
+}
+
+.p-singleWorks__point:not(:first-of-type) {
+  margin-top: rem(54);
+  @include mq("md") {
+    margin-top: rem(71);
+  }
+}
