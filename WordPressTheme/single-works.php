@@ -13,79 +13,60 @@
     </div>
 
     <!-- サムネイル連動スワイパー -->
-    <div class="p-singleWork__swiperContainer">
-      <!-- Slider main container -->
-      <div class="p-singleWorks__swiper js-slider">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/top-contents1.jpg"); ?>" alt="">
+    <?php
+    /* --- 繰り返しフィールドの値を取得 --- */
+    $slider_images = SCF::get('slider_images');
+    /* --- 繰り返しフィールドに値が入っていればスライダー表示 --- */
+    // var_dump($slider_images);
+    if (!empty($slider_images[0]['image'])) :
+    ?>
+      <div class="p-singleWork__swiperContainer">
+        <!-- Slider main container -->
+        <div class="p-singleWorks__swiper js-slider">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- 繰り返しカスタムフィールドでカスタム投稿の製作実績で設定した画像のURLを出力 :$imageは配列でURLは$image[0]に格納されている -->
+            <?php
+            // $slider_images = SCF::get('slider_images');
+            foreach ($slider_images as $slider_image) :
+            ?>
+              <?php $image = wp_get_attachment_image_src($slider_image['image'], 'large');
+              ?>
+              <div class="swiper-slide">
+                <img src="<?php echo esc_url($image[0]); ?>" alt="">
+              </div>
+            <?php endforeach; ?>
           </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev">
+            <i class="fa-solid fa-chevron-left"></i>
           </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-        </div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev">
-          <i class="fa-solid fa-chevron-left"></i>
-        </div>
-        <div class="swiper-button-next">
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-      </div>
-
-      <div class="p-singleWorks__thumbnail js-thumbnail">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/top-contents1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url(get_template_directory_uri() . "/assets/images/common/content-1.jpg"); ?>" alt="">
+          <div class="swiper-button-next">
+            <i class="fa-solid fa-chevron-right"></i>
           </div>
         </div>
-      </div>
-
-    </div><!-- p-singleWork__swiperContainer-->
+        
+        <!-- 画像が1枚だけならサムネイルを表示しない(2枚目($slider_images[1])が無ければ) -->
+        <?php if (!empty($slider_images[1])) : ?>
+          <div class="p-singleWorks__thumbnail js-thumbnail">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <?php
+              // $slider_images = SCF::get('slider_images');
+              foreach ($slider_images as $slider_image) :
+              ?>
+                <?php $image = wp_get_attachment_image_src($slider_image['image'], 'large'); ?>
+                <div class="swiper-slide">
+                  <img src="<?php echo esc_url($image[0]); ?>" alt="">
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div><!-- p-singleWork__swiperContainer-->
+    <?php endif; ?>
 
     <div class="p-singleWorks__points">
       <div class="p-singleWorks__point p-singleWorks-point">
