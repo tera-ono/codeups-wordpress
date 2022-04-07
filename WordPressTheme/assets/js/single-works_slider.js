@@ -36,7 +36,8 @@ if (slideLength > 1) {
     centeredSlides:true,
     // スワイプ中に別のスライドをクリックした時に、スライドを変更が可能になる
     slideToClickedSlide: true,
-  
+    
+    //slidesPerViewで設定した数よりも実際のスライド枚数が少ない時、スライドが中央に配置される
     centerInsufficientSlides: true,
   });
   
