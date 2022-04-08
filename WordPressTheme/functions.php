@@ -24,6 +24,10 @@ function my_setup()
 			'caption',
 		)
 	);
+	/* --- ブロックエディター（管理画面の*全ての*投稿記事編集画面）にCSSを適用させる記述 --- */
+  add_theme_support('editor-styles');
+	/* --- そのCSSファイルのパス --- */
+  add_editor_style('assets/css/block-style.css');
 }
 add_action('after_setup_theme', 'my_setup');
 
@@ -49,11 +53,11 @@ function my_script_init()
 
 	wp_enqueue_script('swiper-CDN', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js", array(), '1.0.0', true);
 
-	if(is_front_page()) {
+	if (is_front_page()) {
 		wp_enqueue_script('mv-swiper', get_template_directory_uri() . '/assets/js/mv_slider.js', array(), '1.0.0', true);
 	}
 
-	if(is_singular( 'works' )) {
+	if (is_singular('works')) {
 		wp_enqueue_script('single-works_slider', get_template_directory_uri() . '/assets/js/single-works_slider.js', array(), '1.0.0', true);
 	}
 
