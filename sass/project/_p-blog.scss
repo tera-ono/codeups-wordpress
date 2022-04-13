@@ -8,8 +8,8 @@
 }
 
 .p-blog__cards .c-newIcon {
-  display: none;
+  display: flex;
   @include mq("md") {
-    display: flex;
+    display: none;
   }
 }

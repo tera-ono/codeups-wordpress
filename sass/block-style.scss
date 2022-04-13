@@ -1,6 +1,121 @@
 /* --- デフォルト投稿(news), カスタム投稿タイプ(blog)ブログ詳細 のブロックエディタ用--- */
 @use "global" as *;
 
- h1 {
-  font-size: 100px;
+/* --- 見出し --- */
+h1 {
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: height 1.75em;
+  letter-spacing: 0.02em;
+  margin-top: rem(24);
+  @include mq("md") {
+    font-size: rem(23);
+    line-height: 1.5217;
+    letter-spacing: 0.017em;
+    margin-top: rem(32);
+  }
+}
+
+h2 {
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1.448;
+  letter-spacing: 0.1em;
+  padding-left: rem(10.5);
+  border-left: 3px solid $white;
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+h3 {
+  display: inline-block;
+  font-size: rem(18);
+  font-weight: $regular;
+  line-height: 1.47777;
+  letter-spacing: 0.1111em;
+  padding-bottom: rem(3);
+  background: linear-gradient(90deg, $yellow 33.6%, $white 33.6%) no-repeat bottom/ 100% 3px;
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+/* ---本文 --- */
+p {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 2.1875;
+  letter-spacing: 0.025em;
+  margin-top: rem(24);
+  @include mq("md") {
+    margin-top: rem(32);
+  }
+}
+
+/* ---画像 縦横比固定: テーマのテンプレートに反映させるスタイル --- */
+
+/* --- figureのクラス --- */
+.wp-block-image {
+  position: relative;
+  margin-top: rem(24);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  @include mq("md") {
+    width: 100%;
+    margin-left: initial;
+    margin-right: initial;
+    margin-top: rem(32);
+  }
+}
+.wp-block-image::before {
+  content: "";
+  display: block;
+  padding-top: 53.44%;
+  @include mq("md") {
+    padding-top: 66.9%;
+  }
+}
+.wp-block-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-position: center;
+  object-fit: cover;
+}
+
+/* --- 画像: ブロックエディタに縦横比固定を反映させるスタイル(ブロックエディタはHTMLの階層が1つ多いため、テーマのスタイルを打ち消す) --- */
+
+/* --- figureのクラス --- */
+.block-editor-block-list__block.wp-block-image {
+  margin-left: initial;
+  margin-right: initial;
+}
+
+.block-editor-block-list__block.wp-block-image::before {
+  content: "";
+  display: block;
+  padding-top: 0;
+}
+
+/* --- imgの親要素 --- */
+.components-resizable-box__container {
+  position: relative;
+  min-width: 50vw !important;
+  height: auto !important; //画像をリサイズしたときに必要
+  max-width: 100% !important; //画像をリサイズしたときに必要
+}
+
+.components-resizable-box__container::before {
+  content: "";
+  display: block;
+  padding-top: 53.44%;
+  @include mq("md") {
+    padding-top: 66.9%;
+  }
 }

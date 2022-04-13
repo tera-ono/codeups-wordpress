@@ -1,5 +1,21 @@
 @use "global" as *;
 
+.c-relatedBlog__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $gray;
+  border: 1px solid $white;
+}
+
+.c-relatedBlog__cards.c-cards {
+  margin-top: rem(32);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
 .c-relatedBlog__cards .c-cards__item {
   @include mq("md") {
     flex: 0 0 22.81818%;
@@ -15,6 +31,12 @@
 .c-relatedBlog__cards .c-cards__item:nth-of-type(n + 5) {
   @include mq("md") {
     margin-top: rem(48);
+  }
+}
+
+.c-relatedBlog__cards .c-card__excerpt {
+  @include mq("md") {
+    display: none;
   }
 }
 

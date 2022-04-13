@@ -2,7 +2,7 @@
 
 <section class="c-relatedBlog l-relatedBlog">
   <div class="l-inner">
-    <h4 class="c-relatedTitle">関連記事</h4>
+    <h4 class="c-relatedBlog__title">関連記事</h4>
     <div class="c-relatedBlog__cards c-cards">
       <!-- カスタム投稿の同じタームの関連記事 4つ出力-->
       <?php 

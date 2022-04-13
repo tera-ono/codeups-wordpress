@@ -31,5 +31,12 @@
 }
 
 .p-single__content {
-  
+  @import "../block-style.scss";
+}
+
+.p-single__navigation {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(104);
+  }
 }
