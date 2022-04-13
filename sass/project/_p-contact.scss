@@ -1,0 +1,110 @@
+@use "global" as *;
+
+.p-contact {
+}
+
+.p-contact__inner {
+  max-width: rem(540); //状況によって変える必要があるかも
+  width: 100%;
+  height: inherit;
+  padding-right: $padding-sp;
+  padding-left: $padding-sp;
+  margin-right: auto;
+  margin-left: auto;
+  /* --- inputのセンターが画面幅のセンターに合うようにインナー幅調整 --- */
+  @include mq("md") {
+    max-width: 1000px + strip-unit($padding-pc) * 2;
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
+}
+
+.p-contact__form {
+  margin-top: rem(85);
+  @include mq("md") {
+    margin-top: rem(115);
+  }
+}
+
+.p-contactForm__items {
+  @include mq("md") {
+    
+  }
+}
+
+.p-contactForm__item:not(:first-of-type) {
+  margin-top: rem(32);
+  @include mq("md") {
+    margin-top: rem(45);
+  }
+}
+
+.p-contactForm__item {
+  @include mq("md") {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.p-contactForm__heading {
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1.85;
+  letter-spacing: 0.05em;
+  color: $white;
+  @include mq("md") {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // display: block;
+  }
+}
+
+.p-contactForm__input {
+  margin-top: rem(16);
+  @include mq("md") {
+    // max-width: rem(540);
+    flex: 0 0 77.1428%;
+    margin-top: initial;
+    // text-align: center;
+    margin-left: rem(24);
+  }
+}
+
+.p-contactForm__btn {
+  margin-top: rem(48);
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1;
+  color: $gray;
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(56);
+    // margin-left: 34%;
+  }
+  @include mq("lg") {
+    // margin-left: rem(257);
+    
+  }
+}
+input,
+textarea {
+  width: 100%;
+  padding: rem(10);
+  background-color: $white;
+  @include mq("md") {
+    max-width: rem(540);
+    padding: rem(7) rem(16);
+  }
+}
+
+input[type="submit"] {
+  max-width: rem(360);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  @include mq("md") {
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+  }
+}
