@@ -1946,6 +1946,16 @@ select::-ms-expand {
   }
 }
 
+.p-contact {
+  padding-bottom: 120px;
+  padding-bottom: 7.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-contact {
+    padding-bottom: 9.375rem;
+  }
+}
+
 .p-contact__inner {
   max-width: 540px;
   max-width: 33.75rem;

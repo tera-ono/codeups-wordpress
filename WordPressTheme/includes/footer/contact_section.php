@@ -1,4 +1,5 @@
 <!-- お問い合わせページ以外に表示されるセクション footer.phpに含める -->
+<?php if(!is_page('contact')) : ?>
 <section class="l-commonContact c-commonContact">
   <div class="l-inner">
     <!-- セクションタイトル -->
@@ -19,3 +20,4 @@
   </div>
 </section>
 <!-- /.c-commonContact -->
+<?php endif; ?>
