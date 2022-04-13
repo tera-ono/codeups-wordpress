@@ -61,6 +61,10 @@ function my_script_init()
 		wp_enqueue_script('single-works_slider', get_template_directory_uri() . '/assets/js/single-works_slider.js', array(), '1.0.0', true);
 	}
 
+	if (is_page('contact')) {
+		wp_enqueue_script('contact_error', get_template_directory_uri() . '/assets/js/contact_error.js', array(), '1.0.0', true);
+	}
+
 	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true);
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
@@ -196,3 +200,20 @@ function my_preget_posts($query)
 	}
 }
 add_action('pre_get_posts', 'my_preget_posts');
+
+
+
+/* --- MW WP Formのエラーメッセージを変更 --- */
+/**
+ * my_error_message
+ * @param string $error
+ * @param string $key
+ * @param string $rule（半角小文字）
+ */
+function my_error_message( $error, $key, $rule ) {
+	if ( ($key === 'company' || $key === 'section' || $key === 'name' || $key === 'kana' || $key === 'email' || $key === 'textarea') && $rule === 'noempty' ) {
+			return '※必要事項を入力してください';
+	}
+	return $error;
+}
+add_filter( 'mwform_error_message_mw-wp-form-189', 'my_error_message', 10, 3 );

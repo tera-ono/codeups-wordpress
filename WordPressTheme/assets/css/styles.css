@@ -1975,6 +1975,28 @@ select::-ms-expand {
   }
 }
 
+.p-contactForm__error {
+  text-align: center;
+  margin-top: -46px;
+  margin-top: -2.875rem;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+}
+
+/* --- フォームの先頭にエラーメッセージ1行だけ表示 --- */
+.p-contactForm__error .error:not(:first-of-type) {
+  display: none;
+}
+
+.p-contactForm__error .error {
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.125em;
+}
+
 .p-contactForm__item:not(:first-of-type) {
   margin-top: 32px;
   margin-top: 2rem;
@@ -2005,6 +2027,7 @@ select::-ms-expand {
   letter-spacing: 0.05em;
   color: #FFFFFF;
 }
+
 .p-contactForm__input {
   margin-top: 16px;
   margin-top: 1rem;
@@ -2035,6 +2058,7 @@ select::-ms-expand {
     margin-top: 3.5rem;
   }
 }
+
 input,
 textarea {
   width: 100%;
@@ -2048,6 +2072,12 @@ textarea {
     max-width: 33.75rem;
     padding: 0.4375rem 1rem;
   }
+}
+
+/* --- インプットにエラーが出たら背景色を変える --- */
+.is-error input,
+.is-error textarea {
+  background-color: #ffdcdc;
 }
 
 input[type=submit] {

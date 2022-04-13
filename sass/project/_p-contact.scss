@@ -26,9 +26,25 @@
   }
 }
 
+.p-contactForm__error {
+  text-align: center;
+  margin-top: rem(-46);
+  margin-bottom: rem(30);
+}
+/* --- フォームの先頭にエラーメッセージ1行だけ表示 --- */
+.p-contactForm__error .error:not(:first-of-type) {
+  display: none;
+}
+.p-contactForm__error .error {
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.125em;
+}
+
 .p-contactForm__items {
   @include mq("md") {
-    
   }
 }
 
@@ -53,21 +69,13 @@
   line-height: 1.85;
   letter-spacing: 0.05em;
   color: $white;
-  @include mq("md") {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // display: block;
-  }
 }
 
 .p-contactForm__input {
   margin-top: rem(16);
   @include mq("md") {
-    // max-width: rem(540);
     flex: 0 0 77.1428%;
     margin-top: initial;
-    // text-align: center;
     margin-left: rem(24);
   }
 }
@@ -81,13 +89,9 @@
   text-align: center;
   @include mq("md") {
     margin-top: rem(56);
-    // margin-left: 34%;
-  }
-  @include mq("lg") {
-    // margin-left: rem(257);
-    
   }
 }
+
 input,
 textarea {
   width: 100%;
@@ -96,6 +100,14 @@ textarea {
   @include mq("md") {
     max-width: rem(540);
     padding: rem(7) rem(16);
+  }
+}
+
+/* --- インプットにエラーが出たら背景色を変える --- */
+.is-error {
+  input,
+  textarea {
+    background-color: #ffdcdc;
   }
 }
 
