@@ -19,6 +19,24 @@
   padding: rem(3) 0;
   color: $white;
   border: 1px solid $white;
+  transition: $transition-duration linear;
+}
+
+@media (any-hover: hover) {
+  .c-postNav-link__item a:hover,
+  .c-postNav-link__item a:focus {
+    opacity: 1;
+    color: $gray;
+    background-color: $white;
+    transition: $transition-duration linear;
+  }
+}
+@media (any-hover: none) {
+  .c-postNav-link__item a:active {
+    color: $gray;
+    background-color: $white;
+    transition: $transition-duration linear;
+  }
 }
 
 .c-postNav-link__item:not(:first-of-type) {

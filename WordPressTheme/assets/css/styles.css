@@ -1241,8 +1241,28 @@ select::-ms-expand {
   padding: 0.1875rem 0;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
+@media (any-hover: hover) {
+  .c-postNav-link__item a:hover,
+.c-postNav-link__item a:focus {
+    opacity: 1;
+    color: #333333;
+    background-color: #FFFFFF;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+}
+@media (any-hover: none) {
+  .c-postNav-link__item a:active {
+    color: #333333;
+    background-color: #FFFFFF;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+}
 .c-postNav-link__item:not(:first-of-type) {
   margin-left: 48px;
   margin-left: 3rem;
@@ -1259,6 +1279,7 @@ select::-ms-expand {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  font-weight: 400;
   background-color: #333333;
   border: 1px solid #FFFFFF;
 }
