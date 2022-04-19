@@ -285,6 +285,16 @@ select::-ms-expand {
   }
 }
 
+.l-thanks {
+  margin-top: 130px;
+  margin-top: 8.125rem;
+}
+@media screen and (min-width: 768px) {
+  .l-thanks {
+    margin-top: 12.5rem;
+  }
+}
+
 .l-topBlog {
   margin-top: 99px;
   margin-top: 6.1875rem;
@@ -3046,6 +3056,42 @@ input[type=submit] {
   font-size: 6.25rem;
   color: #F9F871;
   font-weight: 700;
+}
+
+.p-thanks {
+  padding-bottom: 120px;
+  padding-bottom: 7.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-thanks {
+    padding-bottom: 9.375rem;
+  }
+}
+
+.p-thanks__heading, .p-thanks p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.448;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .p-thanks__heading, .p-thanks p {
+    font-size: 1.875rem;
+    letter-spacing: 0.0666em;
+  }
+}
+
+.p-thanks p {
+  margin-top: 80px;
+  margin-top: 5rem;
+}
+
+.p-thanks__link {
+  margin-top: 80px;
+  margin-top: 5rem;
+  text-align: center;
 }
 
 .p-topBlog__cards {

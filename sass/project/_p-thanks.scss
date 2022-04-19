@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.p-thanks {
+  padding-bottom: rem(120);
+  @include mq("md") {
+    padding-bottom: rem(150);
+  }
+}
+
+.p-thanks__heading, .p-thanks p  {
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1.448;
+  letter-spacing: 0.1em;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(30);
+    letter-spacing: 0.0666em;
+  }
+}
+
+.p-thanks p {
+  margin-top: rem(80);
+}
+.p-thanks__link {
+  margin-top: rem(80);
+  text-align: center;
+}

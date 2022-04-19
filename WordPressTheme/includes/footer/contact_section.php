@@ -1,5 +1,5 @@
 <!-- お問い合わせページ以外に表示されるセクション footer.phpに含める -->
-<?php if(!is_page('contact')) : ?>
+<?php if(!(is_page('contact') || is_page('thanks'))) : ?>
 <section class="l-commonContact c-commonContact">
   <div class="l-inner">
     <!-- セクションタイトル -->
