@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.p-404 {
+  padding-bottom: rem(120);
+  @include mq("md") {
+    padding-bottom: rem(150);
+  }
+}
+
+.p-404__heading {
+  font-size: rem(40);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: yellow;
+  opacity: 0.3;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(60);
+    letter-spacing: 0.0333em;
+  }
+}
+
+.p-404__text {
+  margin-top: rem(80);
+  font-size: rem(20);
+  font-weight: $regular;
+  line-height: 1.448;
+  letter-spacing: 0.1em;
+  color: $white;
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(30);
+    letter-spacing: 0.0666em;
+  }
+}
+.p-404__link {
+  margin-top: rem(80);
+  text-align: center;
+}
