@@ -8,11 +8,11 @@ console.log(slideLength);
 if (slideLength > 1) {
   //メイン
   const slider = new Swiper ('.js-slider', {
+    loop: true,
+    loopedSlides: slideLength, //スライドの枚数と同じ値を指定(ループ時に設定しないとスライド時にズレるので注意)
     slidesPerView: 1,
-    loopedSlides: slideLength, //スライドの枚数と同じ値を指定
     spaceBetween: 10,
     centeredSlides: true,
-    loop: true,
     
     navigation: {
         nextEl: '.swiper-button-next',
@@ -23,6 +23,7 @@ if (slideLength > 1) {
   //サムネイル
   const thumbs = new Swiper ('.js-thumbnail', {
     loop: true,
+    loopedSlides: slideLength, //スライドの枚数と同じ値を指定(ループ時に設定しないとスライド時にズレるので注意)
     slidesPerView: 2,
     spaceBetween: 24,
     breakpoints: {
