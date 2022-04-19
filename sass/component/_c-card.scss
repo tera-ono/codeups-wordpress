@@ -16,7 +16,7 @@
   .c-card:hover .c-card__body,
   .c-card:focus .c-card__body {
     color: $white;
-    transition: background-color $transition-duration linear;
+    transition: color $transition-duration linear;
   }
 }
 
@@ -28,7 +28,7 @@
   }
   .c-card:active .c-card__body {
     color: $white;
-    transition: background-color $transition-duration linear;
+    transition: color $transition-duration linear;
   }
 }
 

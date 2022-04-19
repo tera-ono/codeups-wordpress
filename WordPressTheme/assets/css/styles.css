@@ -460,8 +460,8 @@ select::-ms-expand {
   .c-card:hover .c-card__body,
 .c-card:focus .c-card__body {
     color: #FFFFFF;
-    -webkit-transition: background-color 0.3s linear;
-    transition: background-color 0.3s linear;
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
   }
 }
 @media (any-hover: none) {
@@ -474,8 +474,8 @@ select::-ms-expand {
 
   .c-card:active .c-card__body {
     color: #FFFFFF;
-    -webkit-transition: background-color 0.3s linear;
-    transition: background-color 0.3s linear;
+    -webkit-transition: color 0.3s linear;
+    transition: color 0.3s linear;
   }
 }
 .c-card__img {
