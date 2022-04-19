@@ -40,12 +40,15 @@
               <?php endforeach; ?>
             </div>
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev">
-              <i class="fa-solid fa-chevron-left"></i>
-            </div>
-            <div class="swiper-button-next">
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
+            <!-- 画像が1枚だけならナビゲーションボタンを表示しない(2枚目($slider_images[1])が無ければ) -->
+            <?php if (!empty($slider_images[1])) : ?>
+              <div class="swiper-button-prev">
+                <i class="fa-solid fa-chevron-left"></i>
+              </div>
+              <div class="swiper-button-next">
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            <?php endif; ?>
           </div>
 
           <!-- 画像が1枚だけならサムネイルを表示しない(2枚目($slider_images[1])が無ければ) -->
