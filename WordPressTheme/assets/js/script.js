@@ -30,35 +30,38 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 
   
-  $('.js-drawer').on('click',function(event) {
-    // event.targetを使ってクリックした要素をjQueryオブジェクトに変換する
-    //「closest」でその最も近い親要素を指定し、その中に特定の要素があるかを「length」で確認
-      if(!$(event.target).closest('.p-drawer__items').length) {
-        $(this).removeClass('is-open');
-        $('.js-mobile-menu').removeClass('is-open');
-        $('body').removeClass('is-open');
-      }
-    });
-
-
-
-
 /*******************************************
 トップページのメインビューを画面の高さいっぱいに表示する記述(100vh指定だと、iPhoneのSafariはアドレスバーが表示されアドレスバーの高さだけメインビューが画面の下にはみ出してしまう為) 
 
-ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.p-topMvと .topMv__swiper の.swiper-slideの高さを指定します。
+ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.p-topMvと .topMv__swiper の.swiper-slideと ローディング画面.js-loadingの高さを指定します。
 *******************************************/
   $(document).ready(function () {
     var windowHeight = $(window).height();
-    $(".p-topMv,.p-topMv__swiper .swiper-slide").height(windowHeight);
+    $(".p-topMv,.p-topMv__swiper .swiper-slide, .js-loading").height(windowHeight);
   });
   $(window).resize(function () {
     var windowHeight = $(window).height();
-    $(".js-topMv-swiper").height(windowHeight);
-
-    
+    $(".js-topMv-swiper, .js-loading").height(windowHeight);
   });
 
+
+  /* トップページ： ローディング時
+  ===================================================*/
+  $(window).on('load', function () {
+
+    $('.js-loading, .js-topMv').addClass('is-active');
+    /* ---front.phpのbodyクラスだけ スクロール禁止(他のページに影響が無いように) --- */
+    $('body.home').css({
+      overflow: 'hidden',
+    });
+    //3秒後にスクロール可能にする
+    setTimeout(function () {
+      $('body').css({
+        height: 'auto',
+        overflow: 'auto',
+      });
+    }, 3000);
+  });
 
   /*******************************************
   ヘッダーがスクロールしてMVを通り過ぎると背景色の不透明度が1になる

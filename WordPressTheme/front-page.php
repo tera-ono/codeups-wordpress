@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main>
 
-  <section class="l-topMv p-topMv">
+  <section class="l-topMv p-topMv js-topMv">
     <!-- Slider main container -->
     <div class="swiper p-topMv__swiper js-topMv-swiper">
       <!-- Additional required wrapper -->
@@ -35,6 +35,8 @@
     </div>
   </section>
   <!-- /.l-topMv p-topMv -->
+
+  <?php get_template_part('includes/loader'); ?>
 
   <!-- デフォルト投稿1件表示 -->
   <section class="l-topNews p-topNews">

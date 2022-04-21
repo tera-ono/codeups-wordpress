@@ -1,4 +1,21 @@
 @use "global" as *;
+.p-topMv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba($black, 0.8);
+  z-index: 200;
+}
+.p-topMv.is-active::before {
+  opacity: 0;
+  //hiddenにしないと一番上の階層にマスクがある為、クリックやホバーが出来ない！！
+  visibility: hidden;
+  transition: opacity 0.5s linear 3.1s, visibility 0.5s linear 3.1s;
+}
 
 .p-topMv__title {
   position: absolute;
@@ -11,8 +28,26 @@
   z-index: 2;
   color: $white;
   text-shadow: 1px 2px 7px $gray;
+  clip-path: inset(
+    0 100% 0 0
+  ); //値：左から 上、右、下、左  右が100%＝　右方向から100%切り抜く(見えなくしている)
   @include mq("md") {
     max-width: none;
+  }
+}
+
+.p-topMv.is-active .p-topMv__title {
+  animation: clip-to-right 1s linear 3s both;
+}
+
+@keyframes clip-to-right {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(-2% -4% -2% -2%);
+    clip-path: inset(-2% -4% -2% -2%);
   }
 }
 
@@ -38,7 +73,6 @@
   }
 }
 
-
 .p-topMv__swiper .swiper-slide {
   position: relative;
   width: 100%;
@@ -53,7 +87,7 @@
 
 /* --- 画像の上の薄黒いマスク --- */
 .p-topMv__swiper .swiper-slide::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -63,7 +97,6 @@
   background-color: rgba(17, 17, 17, 0.2);
   z-index: 2;
 }
-
 
 // 現在表示中のスライド
 .p-topMv__swiper .swiper-slide-active img,

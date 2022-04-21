@@ -1,0 +1,115 @@
+@use "global" as *;
+.p-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // min-height: 50rem;
+  z-index: 9999;
+  //beforeとafterで、背景マスクを上下2分割している
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: $bg-black;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.p-loading__logoWrap {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-58%);
+  width: 100%;
+  text-align: center;
+  @include mq("md") {
+    transform: translateY(-70%);
+  }
+}
+
+.p-loading__logo {
+  img {
+    display: inline-block;
+    width: rem(220);
+    @include mq("md") {
+      width: rem(400);
+    }
+  }
+}
+
+.p-loading__copy {
+  margin-top: rem(30);
+  font-size: rem(24);
+  font-weight: $bold;
+  letter-spacing: 0.3em;
+  @include mq("md") {
+    font-size: rem(40);
+  }
+}
+
+.p-loading__period {
+  letter-spacing: -3rem;
+}
+
+//中心の線 最初はscale(0, 1)でx軸方向を0に縮めて見えないようにしている
+.p-loading__line {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 0; //線の始まりを左端に設定
+  width: 100%;
+  height: 2px;
+  background: $accent;
+  transform: scale(0, 1);
+}
+
+
+/* ローディングアニメーション
+  ===================================================*/
+
+//ページが開いたら .is-activeクラスが付与され、背景マスクが中心から上下に開き消えるアニメーションスタート
+.p-loading.is-active {
+  transition: visibility 0s ease 3.1s;
+  visibility: hidden; //ページが開いたら、要素（ローディング画面）がないものとする
+  //上下50%ずつに分割されている背景マスクがY軸方向にscale(1, 0)で0になる (上下にマスクが開き消えていくような)
+  &::before,
+  &::after {
+    transform: scale(1, 0);
+    transition: transform 1.2s cubic-bezier(0.9, 0.1, 0.3, 0.9) 1.8s,
+      -webkit-transform 1.2s cubic-bezier(0.9, 0.1, 0.3, 0.9) 1.8s;
+  }
+  &::before {
+    transform-origin: left top;
+  }
+  &::after {
+    transform-origin: left bottom;
+  }
+
+  //ロゴとテキストは透明になる
+  .p-loading__logoWrap {
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease 2.1s;
+    transition: opacity 0.6s ease 2.1s;
+  }
+
+  //中心の線　scale(0, 1)→scale(1, 1)でX軸方向に左から100％に伸びて opacity:0で透明になっていくアニメーション
+  .p-loading__line {
+    transform: scale(1, 1);
+    transform-origin: left top;
+    transition: transform 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9),
+      opacity 0s ease 1.9s,
+      -webkit-transform 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9);
+    opacity: 0;
+  }
+}
