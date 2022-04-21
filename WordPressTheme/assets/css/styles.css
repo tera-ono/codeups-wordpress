@@ -899,6 +899,10 @@ select::-ms-expand {
   }
 }
 
+.c-mobile-menu:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
 /* --- クリック前の円 透明 --- */
 .c-mobile-menu::after {
   position: absolute;

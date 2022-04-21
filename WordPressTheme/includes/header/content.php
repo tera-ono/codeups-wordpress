@@ -24,11 +24,11 @@
 
 
 		<!-- ハンバーガーメニュー -->
-		<div class="c-mobile-menu js-mobile-menu u-hidden-tab-large">
+		<button class="c-mobile-menu js-mobile-menu u-hidden-tab-large">
 			<span class="c-mobile-menu__bar"></span>
 			<span class="c-mobile-menu__bar"></span>
 			<span class="c-mobile-menu__bar"></span>
-		</div>
+		</button>
 	</div>
 	<!--.p-header__inner-->
 </header>
