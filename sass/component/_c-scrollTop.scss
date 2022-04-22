@@ -5,9 +5,10 @@
   right: rem(31);
   width: rem(45);
   height: rem(45);
+  padding: 0;
   z-index: $scrollTop_z-index;
   background-color: $white;
-  cursor: pointer;
+  // cursor: pointer;
   transition: background-color $transition-duration linear;
 }
 
@@ -22,6 +23,9 @@
   border-left: 2px solid $gray;
   border-bottom: 2px solid $gray;
   transition: border-color $transition-duration linear;
+}
+.c-scrollTop:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 @media (any-hover: hover) {
