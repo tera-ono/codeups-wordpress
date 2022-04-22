@@ -30,6 +30,7 @@
   }
 }
 
+/* --- ブロックエディタのスタイルをインポートすることで、修正など管理しやすい --- */
 .p-single__content {
   @import "../block-style.scss";
 }

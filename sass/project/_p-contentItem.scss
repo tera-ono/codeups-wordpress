@@ -5,7 +5,7 @@
   }
 }
 
-/* --- 偶数のアイテムは逆並び --- */      
+/* --- 偶数のアイテムは逆並び --- */
 .p-contentItem:nth-of-type(even) {
   flex-direction: row-reverse;
 }
@@ -47,9 +47,9 @@
 }
 
 .p-contentItem:nth-of-type(odd) .p-contentItem__body {
- @include mq("md") {
-   margin-left: rem(30);
- }
+  @include mq("md") {
+    margin-left: rem(30);
+  }
 }
 .p-contentItem:nth-of-type(even) .p-contentItem__body {
   @include mq("md") {

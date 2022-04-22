@@ -5,16 +5,16 @@
     <h4 class="c-relatedBlog__title">関連記事</h4>
     <div class="c-relatedBlog__cards c-cards">
       <!-- カスタム投稿の同じタームの関連記事 4つ出力-->
-      <?php 
+      <?php
       /* --- どのカスタム投稿の個別ページが表示中かによって、出力するタクソノミーとタームを制御する--- */
-      if(is_singular('blog')) {
+      if (is_singular('blog')) {
         $taxonomy = 'blog_category';
         $post_type = 'blog';
-      }  elseif(is_singular('works')) {
+      } elseif (is_singular('works')) {
         $taxonomy = 'work_genre';
         $post_type = 'works';
       }
-       
+
 
       $terms = get_the_terms(get_the_ID(), $taxonomy);
       $args = array(

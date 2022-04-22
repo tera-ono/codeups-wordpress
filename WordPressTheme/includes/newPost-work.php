@@ -27,4 +27,5 @@ foreach ($new_workPosts as $post) : setup_postdata($post);
       </article>
     </div>
   </a>
-<?php endforeach; ?>
+<?php endforeach;
+wp_reset_postdata(); ?>

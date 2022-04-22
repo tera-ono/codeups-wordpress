@@ -1,6 +1,5 @@
 @use "global" as *;
 
-
 .c-commonSection-item__inner {
   @include mq("md") {
     display: flex;
@@ -73,8 +72,6 @@
 .c-commonSection-item__swiperContainer .swiper-pagination-bullet-active {
   background-color: $accent;
 }
-
-
 
 .c-commonSection-item__body {
   margin-top: rem(30);
