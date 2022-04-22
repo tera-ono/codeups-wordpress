@@ -3423,6 +3423,12 @@ input[type=submit] {
     font-size: 2rem;
   }
 }
+.p-singleWorks__swiper .swiper-button-prev:after, .p-singleWorks__swiper .swiper-rtl .swiper-button-next:after {
+  content: "";
+}
+.p-singleWorks__swiper .swiper-button-prev:after, .p-singleWorks__swiper .swiper-rtl .swiper-button-next:after {
+  content: "";
+}
 
 /* --- サムネイル --- */
 .p-singleWorks__thumbnail {

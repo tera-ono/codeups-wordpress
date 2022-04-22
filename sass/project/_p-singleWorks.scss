@@ -81,6 +81,13 @@
       font-size: rem(32);
     }
   }
+
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: '';
+  }
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: '';
+  }
 }
 
 /* --- サムネイル --- */
