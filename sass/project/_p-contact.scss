@@ -101,6 +101,9 @@ textarea {
   width: 100%;
   padding: rem(10);
   background-color: $white;
+  &:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
   @include mq("md") {
     max-width: rem(540);
     padding: rem(7) rem(16);

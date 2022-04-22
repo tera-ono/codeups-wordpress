@@ -144,7 +144,7 @@ MV以下になると表れ以下追従
       },140);//カーソルより遅れる時間を指定
     });
     //aタグホバー
-    $("a, button").on({
+    $("a, button, input").on({
       "mouseenter": function() {
         //activeクラス付与
         cursor.addClass("is-active");
