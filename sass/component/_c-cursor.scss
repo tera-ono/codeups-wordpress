@@ -1,0 +1,47 @@
+/* --- マウスカーソルをカスタム --- */
+@use "global" as *;
+.c-cursor,
+.c-cursor__stalker {
+  @include mq("lg") {
+    
+  }
+  position: fixed;
+  pointer-events: none;
+  transition: transform $transition-duration ease;
+}
+
+.c-cursor {
+  @include mq("lg") {
+    width: rem(10);
+    height: rem(10);
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 300;
+    margin: rem(-5) rem(-5);
+  
+    /* --- aタグ、buttonタグにホバー時にjsでクラス付与 --- */
+    &.is-active {
+      transform: scale(0);
+      opacity: 0;
+      transition: 0.5s linear -0.2s;
+    }
+  }
+}
+
+.c-cursor__stalker {
+  @include mq("lg") {
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    border: 2px solid $accent;
+    z-index: 299;
+    margin: rem(-20) rem(-20);
+    /* --- aタグ、buttonタグにホバー時にjsでクラス付与 --- */
+    &.is-active {
+      transform: scale(3.5);
+      border-width: 1px;
+      opacity: 0.5;
+      transition: 0.5s linear -0.5s;
+    }
+  }
+}

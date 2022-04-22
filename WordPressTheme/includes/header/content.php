@@ -37,6 +37,10 @@
 <!-- ドロワーメニュー パーツ化 -->
 <?php get_template_part('includes/header/drawer'); ?>
 
+
+<div class="c-cursor"></div>
+<div class="c-cursor__stalker"></div>
+
 <!-- トップページ、個別投稿ページ、お問い合わせ完了ページ、404以外 でメインビュー表示 -->
 <?php if (!(is_front_page() || is_single() || is_page('thanks') || is_404())) : ?>
 	<section class="p-commonMv js-commonMv">

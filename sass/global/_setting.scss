@@ -46,6 +46,7 @@ $main-bg: $bg-black;
 $sub-bg: $gray;
 
 body {
+  position: relative;
   font-family: $base-font-family;
   // background-color: $main-bg;
   background-image: linear-gradient(60deg, #0b0c0c 0%, #083d3d 30%, #070707 100%);

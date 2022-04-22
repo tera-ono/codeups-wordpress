@@ -1,5 +1,6 @@
 @charset "UTF-8";
 body {
+  position: relative;
   font-family: "Noto Sans JP", sans-serif;
   background-image: linear-gradient(60deg, #0b0c0c 0%, #083d3d 30%, #070707 100%);
   color: #FFFFFF;
@@ -840,6 +841,55 @@ select::-ms-expand {
   margin-left: 2.909%;
 }
 
+/* --- マウスカーソルをカスタム --- */
+.c-cursor,
+.c-cursor__stalker {
+  position: fixed;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+@media screen and (min-width: 1024px) {
+  .c-cursor {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 300;
+    margin: -0.3125rem -0.3125rem;
+    /* --- aタグ、buttonタグにホバー時にjsでクラス付与 --- */
+  }
+  .c-cursor.is-active {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+    -webkit-transition: 0.5s linear -0.2s;
+    transition: 0.5s linear -0.2s;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .c-cursor__stalker {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid #F9F871;
+    z-index: 299;
+    margin: -1.25rem -1.25rem;
+    /* --- aタグ、buttonタグにホバー時にjsでクラス付与 --- */
+  }
+  .c-cursor__stalker.is-active {
+    -webkit-transform: scale(3.5);
+            transform: scale(3.5);
+    border-width: 1px;
+    opacity: 0.5;
+    -webkit-transition: 0.5s linear -0.5s;
+    transition: 0.5s linear -0.5s;
+  }
+}
+
 .c-footerNav__items a {
   display: block;
   text-align: center;
@@ -899,6 +949,7 @@ select::-ms-expand {
   }
 }
 
+/* --- フォーカス時に、デフォルトの青枠がかかるように --- */
 .c-mobile-menu:focus-visible {
   outline: -webkit-focus-ring-color auto 1px;
 }
@@ -2912,6 +2963,7 @@ input[type=submit] {
   /* --- imgの親要素 --- */
 }
 .p-single__content body {
+  position: relative;
   font-family: "Noto Sans JP", sans-serif;
   background-image: linear-gradient(60deg, #0b0c0c 0%, #083d3d 30%, #070707 100%);
   color: #FFFFFF;

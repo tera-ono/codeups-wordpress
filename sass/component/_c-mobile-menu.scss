@@ -14,6 +14,7 @@
     display: none;
   }
 }
+/* --- フォーカス時に、デフォルトの青枠がかかるように --- */
 .c-mobile-menu:focus-visible {
   outline: -webkit-focus-ring-color auto 1px;
 }
