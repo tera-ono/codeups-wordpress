@@ -7,7 +7,7 @@
       <!-- Additional required wrapper -->
 
       <div class="p-topMv__title">
-        <h2 class="p-topMv__mainTitle">Live with nature</h2>
+        <h2 class="p-topMv__mainTitle">Live With Nature</h2>
         <p class="p-topMv__subTitle">自然と共に暮らす</p>
       </div>
       <div class="swiper-wrapper">

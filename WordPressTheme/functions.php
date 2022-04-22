@@ -25,9 +25,9 @@ function my_setup()
 		)
 	);
 	/* --- ブロックエディター（管理画面の*全ての*投稿記事編集画面）にCSSを適用させる記述 --- */
-  add_theme_support('editor-styles');
+	add_theme_support('editor-styles');
 	/* --- そのCSSファイルのパス --- */
-  add_editor_style('assets/css/block-style.css');
+	add_editor_style('assets/css/block-style.css');
 }
 add_action('after_setup_theme', 'my_setup');
 
@@ -45,6 +45,9 @@ function my_script_init()
 	wp_enqueue_style('google-font1', "https://fonts.googleapis.com", array(), '1.0.1', 'all');
 	wp_enqueue_style('google-font2', "https://fonts.gstatic.com", array(), '1.0.1', 'all');
 	wp_enqueue_style('google-font3', "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP&display=swap", array(), '1.0.1', 'all');
+	if (is_front_page()) {
+		wp_enqueue_style('google-font4', "https://fonts.googleapis.com/css2?family=Overlock:ital,wght@1,900&display=swap", array(), '1.0.1', 'all');
+	}
 
 	wp_enqueue_style('font-awesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css", array(), '5.11.2', 'all');
 
@@ -210,10 +213,11 @@ add_action('pre_get_posts', 'my_preget_posts');
  * @param string $key
  * @param string $rule（半角小文字）
  */
-function my_error_message( $error, $key, $rule ) {
-	if ( ($key === 'company' || $key === 'section' || $key === 'name' || $key === 'kana' || $key === 'email' || $key === 'textarea') && $rule === 'noempty' ) {
-			return '※必要事項を入力してください';
+function my_error_message($error, $key, $rule)
+{
+	if (($key === 'company' || $key === 'section' || $key === 'name' || $key === 'kana' || $key === 'email' || $key === 'textarea') && $rule === 'noempty') {
+		return '※必要事項を入力してください';
 	}
 	return $error;
 }
-add_filter( 'mwform_error_message_mw-wp-form-189', 'my_error_message', 10, 3 );
+add_filter('mwform_error_message_mw-wp-form-189', 'my_error_message', 10, 3);
