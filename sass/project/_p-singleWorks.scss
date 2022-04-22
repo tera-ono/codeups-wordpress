@@ -124,3 +124,10 @@
     margin-top: rem(71);
   }
 }
+
+.p-singleWorks__navigation {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(105);
+  }
+}

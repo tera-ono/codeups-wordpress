@@ -30,6 +30,6 @@
 </footer>
 
 <!-- スクロールトップボタン -->
-<div class="c-scrollTop js-scrollTop">
- <span class="c-scrollTop__arrow"></span>
-</div>
+<button class="c-scrollTop js-scrollTop">
+  <span class="c-scrollTop__arrow"></span>
+</button>

@@ -273,8 +273,8 @@ select::-ms-expand {
 .l-single {
   margin-top: 53px;
   margin-top: 3.3125rem;
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
+  margin-bottom: 120px;
+  margin-bottom: 7.5rem;
 }
 @media screen and (min-width: 768px) {
   .l-single {
@@ -286,8 +286,8 @@ select::-ms-expand {
 .l-singleWorks {
   margin-top: 53px;
   margin-top: 3.3125rem;
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
+  margin-bottom: 120px;
+  margin-bottom: 7.5rem;
 }
 @media screen and (min-width: 768px) {
   .l-singleWorks {
@@ -1393,9 +1393,9 @@ select::-ms-expand {
   width: 2.8125rem;
   height: 45px;
   height: 2.8125rem;
+  padding: 0;
   z-index: 100;
   background-color: #FFFFFF;
-  cursor: pointer;
   -webkit-transition: background-color 0.3s linear;
   transition: background-color 0.3s linear;
 }
@@ -1415,6 +1415,10 @@ select::-ms-expand {
   border-bottom: 2px solid #333333;
   -webkit-transition: border-color 0.3s linear;
   transition: border-color 0.3s linear;
+}
+
+.c-scrollTop:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 @media (any-hover: hover) {
@@ -3310,6 +3314,16 @@ input[type=submit] {
 @media screen and (min-width: 768px) {
   .p-singleWorks__point:not(:first-of-type) {
     margin-top: 4.4375rem;
+  }
+}
+
+.p-singleWorks__navigation {
+  margin-top: 80px;
+  margin-top: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-singleWorks__navigation {
+    margin-top: 6.5625rem;
   }
 }
 

@@ -92,16 +92,16 @@
           </p>
         </div>
       </div>
+      <!-- 個別投稿ページでの（デフォルト・カスタム投稿ページ共通）の前後の記事へのリンクと、その投稿タイプのアーカイブページへのリンク -->
+      <nav class="p-singleWorks__navigation">
+        <?php get_template_part('includes/post_navLink'); ?>
+      </nav>
+      <!--.p-singleWorks__navigation -->
     </div>
     <!-- ."p-singleWorks__inner l-inner -->
   </div>
   <!-- /.p-singleWorks l-singleWorks -->
 
-  <!-- 個別投稿ページでの（デフォルト・カスタム投稿ページ共通）の前後の記事へのリンクと、その投稿タイプのアーカイブページへのリンク -->
-  <nav class="p-singleWorks__navigation">
-    <?php get_template_part('includes/post_navLink'); ?>
-  </nav>
-  <!--.p-singleWorks__navigation -->
 </main>
 
 <?php get_template_part('includes/related_blogCards'); ?>
