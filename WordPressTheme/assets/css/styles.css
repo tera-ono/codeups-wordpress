@@ -3384,6 +3384,7 @@ input[type=submit] {
 /* --- メイン --- */
 .p-singleWorks__swiper {
   position: relative;
+  /* --- firefoxで前後の矢印が表示されてしまった --- */
 }
 .p-singleWorks__swiper::before {
   content: "";
@@ -3409,7 +3410,8 @@ input[type=submit] {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.p-singleWorks__swiper .swiper-button-prev, .p-singleWorks__swiper .swiper-button-next {
+.p-singleWorks__swiper .swiper-button-prev,
+.p-singleWorks__swiper .swiper-button-next {
   width: 30px;
   height: 30px;
   background-color: #111111;
@@ -3417,16 +3419,17 @@ input[type=submit] {
   border-radius: 50%;
 }
 @media screen and (min-width: 768px) {
-  .p-singleWorks__swiper .swiper-button-prev, .p-singleWorks__swiper .swiper-button-next {
+  .p-singleWorks__swiper .swiper-button-prev,
+.p-singleWorks__swiper .swiper-button-next {
     width: 50px;
     height: 50px;
     font-size: 2rem;
   }
 }
-.p-singleWorks__swiper .swiper-button-prev:after, .p-singleWorks__swiper .swiper-rtl .swiper-button-next:after {
+.p-singleWorks__swiper .swiper-button-prev:after {
   content: "";
 }
-.p-singleWorks__swiper .swiper-button-prev:after, .p-singleWorks__swiper .swiper-rtl .swiper-button-next:after {
+.p-singleWorks__swiper .swiper-button-next:after {
   content: "";
 }
 
