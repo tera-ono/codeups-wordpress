@@ -137,7 +137,7 @@ MV以下になると表れ以下追従
       //ストーカー要素のcssを書き換える用    
       setTimeout(function(){
         stalker.css({
-          // "opacity":"0.9",
+          "opacity":"0.9",
           "top":y+"px",
           "left":x+"px"
         });

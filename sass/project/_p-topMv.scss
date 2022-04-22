@@ -116,3 +116,31 @@
     transform: scale(1.3);
   }
 }
+
+/* --- 最新の製作実績投稿1件 最初非表示で、　ローディングが終わったら下からフェイドイン --- */
+.p-topMV__newPost {
+  opacity: 0;
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  display: inline-block;
+  width: 100%;
+  transform: translate(-50%, 20px);
+  z-index: 2;
+  @include mq("md") {
+    top: initial;
+    left: initial;
+    bottom: rem(20);
+    right: rem(20);
+    transform: translate(0, 20px);
+  }
+}
+
+.p-topMv.is-active .p-topMV__newPost {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: opacity 1s ease-in 4s, transform 1s ease 4s;
+  @include mq("md") {
+    transform: translate(0);
+  }
+}

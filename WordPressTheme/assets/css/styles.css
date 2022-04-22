@@ -852,13 +852,22 @@ select::-ms-expand {
 /* --- マウスカーソルをカスタム --- */
 .c-cursor,
 .c-cursor__stalker {
-  position: fixed;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  /*--最初透明にして置かないと、ページ遷移時に左上隅にカーソルが毎回見えてしまい不恰好！
+  JSでマウスが動いた時にopacityを付与し表示する --*/
+  opacity: 0;
 }
+@media screen and (min-width: 1024px) {
+  .c-cursor,
+.c-cursor__stalker {
+    position: fixed;
+    pointer-events: none;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .c-cursor {
     width: 0.625rem;
@@ -1135,6 +1144,148 @@ select::-ms-expand {
   line-height: 1;
   letter-spacing: 0.125em;
   color: #333333;
+}
+
+.c-newPost-work {
+  max-width: 70%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .c-newPost-work {
+    max-width: 25rem;
+  }
+}
+
+@media (any-hover: hover) {
+  .c-newPost-work:hover .c-newPost-work__heading,
+.c-newPost-work:focus .c-newPost-work__heading {
+    opacity: 0.8;
+    background-color: #FFFFFF;
+    color: #333333;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+
+  .c-newPost-work:hover .c-newPost-work__item,
+.c-newPost-work:focus .c-newPost-work__item {
+    opacity: 0.8;
+    background-color: #333333;
+    color: #FFFFFF;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+}
+@media (any-hover: none) {
+  .c-newPost-work:active .c-newPost-work__heading {
+    opacity: 0.8;
+    background-color: #FFFFFF;
+    color: #333333;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+
+  .c-newPost-work:active .c-newPost-work__item {
+    opacity: 0.8;
+    background-color: #333333;
+    color: #FFFFFF;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+}
+.c-newPost-work__heading {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background-color: #333333;
+  text-align: center;
+  padding: 10px;
+  padding: 0.625rem;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.c-newPost-work__item {
+  padding: 10px;
+  padding: 0.625rem;
+  color: #333333;
+  background-color: #FFFFFF;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+@media screen and (min-width: 768px) {
+  .c-newPost-work__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.c-newPost-work__img {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .c-newPost-work__img {
+    display: block;
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+}
+
+.c-newPost-work__img::before {
+  content: "";
+  display: block;
+  padding-top: 60%;
+}
+
+.c-newPost-work__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.c-newPost-work__body {
+  line-height: 1.25;
+  letter-spacing: 0.015em;
+}
+@media screen and (min-width: 768px) {
+  .c-newPost-work__body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 48%;
+            flex: 1 0 48%;
+    margin-left: 0.9375rem;
+  }
+}
+
+.c-newPost-work__title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.c-newPost-work__meta {
+  margin-top: 10px;
+  margin-top: 0.625rem;
+}
+
+.c-newPost-work__date {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .c-news {
@@ -3650,6 +3801,47 @@ input[type=submit] {
             transform: scale(1.3);
   }
 }
+/* --- 最新の製作実績投稿1件 最初非表示で、　ローディングが終わったら下からフェイドイン --- */
+.p-topMV__newPost {
+  opacity: 0;
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  display: inline-block;
+  width: 100%;
+  -webkit-transform: translate(-50%, 20px);
+          transform: translate(-50%, 20px);
+  z-index: 2;
+}
+@media screen and (min-width: 768px) {
+  .p-topMV__newPost {
+    top: auto;
+    top: initial;
+    left: auto;
+    left: initial;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
+  }
+}
+
+.p-topMv.is-active .p-topMV__newPost {
+  opacity: 1;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-transition: opacity 1s ease-in 4s, -webkit-transform 1s ease 4s;
+  transition: opacity 1s ease-in 4s, -webkit-transform 1s ease 4s;
+  transition: opacity 1s ease-in 4s, transform 1s ease 4s;
+  transition: opacity 1s ease-in 4s, transform 1s ease 4s, -webkit-transform 1s ease 4s;
+}
+@media screen and (min-width: 768px) {
+  .p-topMv.is-active .p-topMV__newPost {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .p-topNews__inner {
     display: -webkit-box;

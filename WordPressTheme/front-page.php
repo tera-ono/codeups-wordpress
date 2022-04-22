@@ -10,6 +10,10 @@
         <h2 class="p-topMv__mainTitle">Live With Nature</h2>
         <p class="p-topMv__subTitle">自然と共に暮らす</p>
       </div>
+      
+      <!-- 製作実績の最新の投稿1件を表示 -->
+      <?php get_template_part('includes/newPost-work'); ?>
+
       <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
@@ -190,13 +194,13 @@
         <?php if ($new_query->have_posts()) : ?>
           <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
 
-          <!-- 1番目の記事だったら -->
+            <!-- 1番目の記事だったら -->
             <?php if ($new_query->current_post == 0) : ?>
               <?php get_template_part('includes/newIcon_blog_card'); ?>
               <!-- それ以降（2番目からの出力） -->
-              <?php else : ?>
-                <!-- パーツ化したブログカード -->
-                <?php get_template_part('includes/blog_card'); ?>
+            <?php else : ?>
+              <!-- パーツ化したブログカード -->
+              <?php get_template_part('includes/blog_card'); ?>
             <?php endif; ?>
           <?php endwhile; ?>
         <?php endif;

@@ -2,12 +2,14 @@
 @use "global" as *;
 .c-cursor,
 .c-cursor__stalker {
+  /*--最初透明にして置かないと、ページ遷移時に左上隅にカーソルが毎回見えてしまい不恰好！
+	JSでマウスが動いた時にopacityを付与し表示する --*/
+  opacity: 0;
   @include mq("lg") {
-    
+    position: fixed;
+    pointer-events: none;
+    transition: transform $transition-duration ease;
   }
-  position: fixed;
-  pointer-events: none;
-  transition: transform $transition-duration ease;
 }
 
 .c-cursor {

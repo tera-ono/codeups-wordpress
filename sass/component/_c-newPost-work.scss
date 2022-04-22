@@ -1,0 +1,113 @@
+@use "global" as *;
+
+.c-newPost-work {
+  max-width: 70%;
+  border-radius: 14px;
+  overflow: hidden;
+  @include mq("md") {
+    max-width: rem(400);
+  }
+}
+
+@media (any-hover: hover) {
+  .c-newPost-work:hover .c-newPost-work__heading,
+  .c-newPost-work:focus .c-newPost-work__heading {
+    opacity: 0.8;
+    background-color: $white;
+    color: $gray;
+    transition: $transition-duration linear;
+  }
+  .c-newPost-work:hover .c-newPost-work__item,
+  .c-newPost-work:focus .c-newPost-work__item {
+    opacity: 0.8;
+    background-color: $gray;
+    color: $white;
+    transition: $transition-duration linear;
+  }
+}
+@media (any-hover: none) {
+  .c-newPost-work:active .c-newPost-work__heading {
+    opacity: 0.8;
+    background-color: $white;
+    color: $gray;
+    transition: $transition-duration linear;  
+  }
+  .c-newPost-work:active .c-newPost-work__item {
+    opacity: 0.8;
+    background-color: $gray;
+    color: $white;
+    transition: $transition-duration linear;
+  }
+}
+
+.c-newPost-work__inner {
+}
+
+.c-newPost-work__heading {
+  font-size: rem(18);
+  font-weight: $regular;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $white;
+  background-color: $gray;
+  text-align: center;
+  padding: rem(10);
+  transition: $transition-duration linear;
+}
+
+.c-newPost-work__item {
+  padding: rem(10);
+  color: $gray;
+  background-color: $white;
+  transition: $transition-duration linear;
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.c-newPost-work__img {
+  display: none;
+  @include mq("md") {
+    display: block;
+    position: relative;
+    width: 100%;
+    flex: 0 1 auto;
+  }
+}
+.c-newPost-work__img::before {
+  content: "";
+  display: block;
+  padding-top: 60%;
+}
+.c-newPost-work__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-position: center;
+  object-fit: cover;
+}
+
+.c-newPost-work__body {
+  line-height: 1.25;
+  letter-spacing: 0.015em;
+  @include mq("md") {
+    flex: 1 0 48%;
+    margin-left: rem(15);
+  }
+}
+
+.c-newPost-work__title {
+  font-size: rem(18);
+  font-weight: $bold;
+}
+
+.c-newPost-work__meta {
+  margin-top: rem(10);
+}
+.c-newPost-work__date {
+  font-size: rem(14);
+  font-weight: $regular;
+}
