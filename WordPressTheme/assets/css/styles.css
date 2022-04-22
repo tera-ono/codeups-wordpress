@@ -754,6 +754,7 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .c-commonSection-item__body {
     margin-top: 0;
+    margin-left: 2.909%;
     padding-bottom: 0;
   }
 }
@@ -836,9 +837,16 @@ select::-ms-expand {
   }
 }
 
-.c-commonSection:nth-child(odd) .c-commonSection-item__swiperContainer, .c-commonSection-item__img {
-  margin-right: 0;
-  margin-left: 2.909%;
+@media screen and (min-width: 768px) {
+  .c-commonSection:nth-of-type(odd) .c-commonSection-item__swiperContainer, .c-commonSection:nth-of-type(odd) .c-commonSection-item__img {
+    margin-left: 2.909%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .c-commonSection:nth-of-type(odd) .c-commonSection-item__body {
+    margin-left: 0;
+  }
 }
 
 /* --- マウスカーソルをカスタム --- */

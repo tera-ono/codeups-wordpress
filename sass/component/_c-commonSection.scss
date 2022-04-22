@@ -27,7 +27,14 @@
   }
 }
 
-.c-commonSection:nth-child(odd) .c-commonSection-item__swiperContainer, .c-commonSection-item__img {
-  margin-right: 0;
-  margin-left: 2.909%;
+.c-commonSection:nth-of-type(odd) .c-commonSection-item__swiperContainer, .c-commonSection:nth-of-type(odd) .c-commonSection-item__img {
+  @include mq("md") {
+    margin-left: 2.909%;
+  }
+}
+
+.c-commonSection:nth-of-type(odd) .c-commonSection-item__body {
+  @include mq("md") {
+    margin-left: 0;
+  }
 }
