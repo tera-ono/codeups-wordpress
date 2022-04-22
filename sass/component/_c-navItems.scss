@@ -2,7 +2,7 @@
 /* --- ナビメニューホバー時テキストリンクに下線表示 の共通クラス--- */
 
 .c-navItems span {
-  transition: 0.1s ease-in;
+  transition: $transition-duration linear;
   border: 1px solid transparent;
 }
 
@@ -10,7 +10,7 @@
   .c-navItems a:hover span,
   .c-navItems a:focus span {
     border-bottom: 1px solid $accent;
-    transition: 0.1s ease-in;
+    transition: $transition-duration linear;
   }
   .c-navItems a:hover, .c-navItems a:focus {
     opacity: 1;
@@ -21,6 +21,6 @@
 @media (any-hover: none) {
   .c-navItems a:active span {
     border-bottom: 1px solid $accent;
-    transition: 0.1s ease-in;
+    transition: $transition-duration linear;
   }
 }

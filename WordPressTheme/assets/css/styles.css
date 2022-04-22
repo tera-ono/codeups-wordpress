@@ -1081,8 +1081,8 @@ select::-ms-expand {
 }
 /* --- ナビメニューホバー時テキストリンクに下線表示 の共通クラス--- */
 .c-navItems span {
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
   border: 1px solid transparent;
 }
 
@@ -1090,8 +1090,8 @@ select::-ms-expand {
   .c-navItems a:hover span,
 .c-navItems a:focus span {
     border-bottom: 1px solid #F9F871;
-    -webkit-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
   }
 
   .c-navItems a:hover, .c-navItems a:focus {
@@ -1101,8 +1101,8 @@ select::-ms-expand {
 @media (any-hover: none) {
   .c-navItems a:active span {
     border-bottom: 1px solid #F9F871;
-    -webkit-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
   }
 }
 .c-newIcon {
