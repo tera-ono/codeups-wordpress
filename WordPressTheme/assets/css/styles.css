@@ -2940,8 +2940,14 @@ input[type=submit] {
 }
 
 .p-loading__period {
-  letter-spacing: -48px;
-  letter-spacing: -3rem;
+  display: inline-block;
+  letter-spacing: -19.2px;
+  letter-spacing: -1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .p-loading__period {
+    letter-spacing: -2rem;
+  }
 }
 
 .p-loading__line {
@@ -2987,7 +2993,7 @@ input[type=submit] {
   0%, 1%, 100% {
     opacity: 0;
   }
-  30%, 90% {
+  10%, 90% {
     opacity: 1;
   }
 }
@@ -2995,7 +3001,7 @@ input[type=submit] {
   0%, 1%, 100% {
     opacity: 0;
   }
-  30%, 90% {
+  10%, 90% {
     opacity: 1;
   }
 }

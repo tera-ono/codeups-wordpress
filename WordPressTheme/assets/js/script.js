@@ -50,8 +50,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         /*
           2回目以降アクセス時の処理
         */
-        $(".js-loading, .js-topMv").addClass('is-active');
-        // $(".js-loading, .js-topMv").addClass('is-hidden');
+        $(".js-loading, .js-topMv").addClass('is-hidden');
       } else {
         /*
           初回アクセス時の処理
