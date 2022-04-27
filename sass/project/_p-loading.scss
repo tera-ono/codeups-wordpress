@@ -29,6 +29,7 @@
   }
 }
 
+/* --- 2回目以降のアクセスで非表示 --- */
 .p-loading.is-hidden {
   opacity: 0;
   visibility: hidden;
