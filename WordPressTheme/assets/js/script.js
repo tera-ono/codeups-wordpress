@@ -42,27 +42,36 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 
 
-  /* トップページ： ローディング時
+  /* トップページ： 1回目のローディング時だけローディング(画面)アニメーション表示
   ===================================================*/
-  //注意: $(window).on('load', function () だと、safari,firefoxで他のページ(固定・アーカイブページなど)から
-  // トップページへ遷移すると、ローディングされず再読み込みを自分で行わないとローディングアニメーションが行われなかった。
-
-  $(window).ready(function () {
-
-    $('.js-loading, .js-topMv').addClass('is-active');
-    /* ---front.phpのbodyクラスだけ スクロール禁止(他のページに影響が無いように) --- */
-    $('body.home').css({
-      overflow: 'hidden',
-    });
-    //3秒後にスクロール可能にする
-    setTimeout(function () {
-      $('body').css({
-        height: 'auto',
-        overflow: 'auto',
-      });
-    }, 3000);
+  $(function () {
+    var webStorage = function () {
+      if (sessionStorage.getItem('access')) {
+        /*
+          2回目以降アクセス時の処理
+        */
+        $(".js-loading, .js-topMv").addClass('is-hidden');
+      } else {
+        /*
+          初回アクセス時の処理
+        */
+        sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
+        $(".js-loading, .js-topMv").addClass('is-active'); // loadingアニメーションを表示
+          /* ---front.phpのbodyクラスだけ スクロール禁止(他のページに影響が無いように) --- */
+        $('body.home').css({
+          overflow: 'hidden',
+        });
+         //   //3秒後にスクロール可能にする
+        setTimeout(function () {
+          $('body').css({
+            height: 'auto',
+            overflow: 'auto',
+          });
+        }, 3000);
+      }
+    }
+    webStorage();
   });
-
   /*******************************************
   ヘッダーがスクロールしてMVを通り過ぎると背景色の不透明度が1になる
   *******************************************/

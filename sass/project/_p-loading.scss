@@ -1,3 +1,4 @@
+/* --- ローディング画面 最初の1回だけアニメーションをする使用(jsで制御) --- */
 @use "global" as *;
 .p-loading {
   position: fixed;
@@ -5,8 +6,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // min-height: 50rem;
   z-index: 9999;
+  /* --- トップページへ遷移した時に、ローディングアニメーション前の画面が見えないようにする --- */
+  opacity: 0;
+
   //beforeとafterで、背景マスクを上下2分割している
   &::before,
   &::after {
@@ -24,6 +27,11 @@
     bottom: 0;
     left: 0;
   }
+}
+
+.p-loading.is-hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .p-loading__logoWrap {
@@ -80,8 +88,9 @@
 
 //ページが開いたら .is-activeクラスが付与され、背景マスクが中心から上下に開き消えるアニメーションスタート
 .p-loading.is-active {
-  transition: visibility 0s ease 3.1s;
+  opacity: 1;
   visibility: hidden; //ページが開いたら、要素（ローディング画面）がないものとする
+  transition: visibility 0s ease 3.1s, opacity 0s;
   //上下50%ずつに分割されている背景マスクがY軸方向にscale(1, 0)で0になる (上下にマスクが開き消えていくような)
   &::before,
   &::after {

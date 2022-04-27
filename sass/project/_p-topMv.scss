@@ -10,12 +10,19 @@
   background-color: rgba($black, 0.8);
   z-index: 200;
 }
+/* --- 1回目のローディング時のみアニメーション --- */
 .p-topMv.is-active::before {
   opacity: 0;
   //hiddenにしないと一番上の階層にマスクがある為、クリックやホバーが出来ない！！
   visibility: hidden;
   transition: opacity 0.5s linear 3.1s, visibility 0.5s linear 3.1s;
 }
+
+/* --- 2回目以降のローディングでは非表示 --- */
+.p-topMv.is-hidden::before {
+  visibility: hidden;
+}
+
 
 .p-topMv__title {
   position: absolute;
@@ -36,8 +43,13 @@
   }
 }
 
+/* --- 1回目のローディング時のみアニメーション --- */
 .p-topMv.is-active .p-topMv__title {
   animation: clip-to-right 1s linear 3s both;
+}
+/* --- 2回目以降のローディングでは非表示 --- */
+.p-topMv.is-hidden .p-topMv__title {
+  clip-path: initial;
 }
 
 @keyframes clip-to-right {
@@ -46,8 +58,8 @@
     clip-path: inset(0 100% 0 0);
   }
   to {
-    -webkit-clip-path: inset(-2% -4% -2% -2%);
-    clip-path: inset(-2% -4% -2% -2%);
+    -webkit-clip-path: inset(0% 0% 0% 0%);
+    clip-path: inset(0% 0% 0% 0%);
   }
 }
 
@@ -70,7 +82,6 @@
   margin-top: rem(30);
   @include mq("md") {
     font-size: rem(55);
-    // letter-spacing: 0.4em;
   }
 }
 
@@ -117,7 +128,7 @@
   }
 }
 
-/* --- 最新の製作実績投稿1件 最初非表示で、　ローディングが終わったら下からフェイドイン --- */
+/* --- 最新の製作実績投稿1件 下からフェードインする --- */
 .p-topMV__newPost {
   opacity: 0;
   position: absolute;
@@ -135,11 +146,21 @@
     transform: translate(0, 20px);
   }
 }
-
+/* --- 最初非表示で、*1回目のローディングアニメーションが終わったら* 下からフェイドイン開始(delay) --- */
 .p-topMv.is-active .p-topMV__newPost {
   opacity: 1;
   transform: translate(-50%, 0);
   transition: opacity 1s ease-in 4s, transform 1s ease 4s;
+  @include mq("md") {
+    transform: translate(0);
+  }
+}
+
+/* ---  *2回目のローディング以降は delay無しで下からフェイドイン開始 --- */
+.p-topMv.is-hidden .p-topMV__newPost {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: opacity 1s ease-in, transform 1s ease;
   @include mq("md") {
     transform: translate(0);
   }
