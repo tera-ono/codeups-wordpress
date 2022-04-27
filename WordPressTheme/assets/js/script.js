@@ -44,7 +44,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   /* トップページ： ローディング時
   ===================================================*/
-  $(window).on('load', function () {
+  //注意: $(window).on('load', function () だと、safari,firefoxで他のページ(固定・アーカイブページなど)から
+  // トップページへ遷移すると、ローディングされず再読み込みを自分で行わないとローディングアニメーションが行われなかった。
+
+  $(window).ready(function () {
 
     $('.js-loading, .js-topMv').addClass('is-active');
     /* ---front.phpのbodyクラスだけ スクロール禁止(他のページに影響が無いように) --- */
