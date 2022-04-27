@@ -36,7 +36,7 @@
 }
 
 .p-loading__logoWrap {
-  z-index: 10;
+  z-index: 100;
   position: absolute;
   top: 50%;
   transform: translateY(-58%);
@@ -52,18 +52,19 @@
     display: inline-block;
     width: rem(220);
     @include mq("md") {
-      width: rem(400);
+      width: rem(450);
     }
   }
 }
 
 .p-loading__copy {
   margin-top: rem(30);
-  font-size: rem(24);
+  font-size: rem(30);
   font-weight: $bold;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.4em;
   @include mq("md") {
-    font-size: rem(40);
+    font-size: rem(50);
+    letter-spacing: 0.7em;
   }
 }
 
@@ -74,13 +75,13 @@
 //中心の線 最初はscale(0, 1)でx軸方向を0に縮めて見えないようにしている
 .p-loading__line {
   position: absolute;
-  z-index: 100;
-  top: 50%;
+  z-index: 2;
+  top: 0;
   left: 0; //線の始まりを左端に設定
   width: 100%;
-  height: 2px;
-  background: $accent;
-  transform: scale(0, 1);
+  height: 100%;
+  background: linear-gradient(to right top, transparent 50%, $accent 50%, $accent calc(50% + 3px),  transparent calc(50% - 3px));
+  // transform: scale(0, 0);
 }
 
 
@@ -96,7 +97,7 @@
   &::before,
   &::after {
     transform: scale(1, 0);
-    transition: transform 1.2s cubic-bezier(0.9, 0.1, 0.3, 0.9) 1.8s,
+    transition: transform 1.7s cubic-bezier(0.9, 0.1, 0.3, 0.9) 1.8s,
       -webkit-transform 1.2s cubic-bezier(0.9, 0.1, 0.3, 0.9) 1.8s;
   }
   &::before {
@@ -107,19 +108,50 @@
   }
 
   //ロゴとテキストは透明になる
-  .p-loading__logoWrap {
-    opacity: 0;
-    -webkit-transition: opacity 0.6s ease 2.1s;
-    transition: opacity 0.6s ease 2.1s;
+  .p-loading__logo {
+    // opacity: 0;
+    // -webkit-transition: opacity 0.6s ease 2.1s;
+    // transition: opacity 0.6s ease 2.1s;
+    animation: loading-logo-opacity 2.25s ease-in both;
   }
-
+  .p-loading__copy {
+    animation: loading-logo-opacity 1.65s ease-in 0.5s both;
+  }
+  @keyframes loading-logo-opacity {
+    0%, 1%, 100% {
+      opacity: 0;
+    }
+    30%, 90% {
+      opacity: 1;
+    }
+  }
   //中心の線　scale(0, 1)→scale(1, 1)でX軸方向に左から100％に伸びて opacity:0で透明になっていくアニメーション
   .p-loading__line {
-    transform: scale(1, 1);
-    transform-origin: left top;
-    transition: transform 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9),
-      opacity 0s ease 1.9s,
-      -webkit-transform 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9);
+    // transform: scale(1, 1);
+    // transform-origin: left top;
+    animation: loading-line-scale 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9), loading-line-opacity 0.5s ease 1.9s both;
+    // transition: transform 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9),
+    //   opacity 0s ease 1.9s,
+    //   -webkit-transform 1.5s cubic-bezier(0.9, 0.1, 0.3, 0.9);
+    // opacity: 0;
+  }
+}
+@keyframes loading-line-scale {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes loading-line-opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
   }
 }

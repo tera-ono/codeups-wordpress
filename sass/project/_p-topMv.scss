@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  background-color: rgba($black, 0.8);
+  background-color: rgba($bg-black, 0.6);
   z-index: 200;
 }
 /* --- 1回目のローディング時のみアニメーション --- */
@@ -15,7 +15,7 @@
   opacity: 0;
   //hiddenにしないと一番上の階層にマスクがある為、クリックやホバーが出来ない！！
   visibility: hidden;
-  transition: opacity 0.5s linear 3.1s, visibility 0.5s linear 3.1s;
+  transition: opacity 1.0s ease 3.1s, visibility 1.0s ease 3.1s;
 }
 
 /* --- 2回目以降のローディングでは非表示 --- */
