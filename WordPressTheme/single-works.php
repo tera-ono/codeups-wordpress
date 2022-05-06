@@ -76,19 +76,19 @@
         <div class="p-singleWorks__point p-singleWorks-point">
           <p class="p-singleWorks-point__title">制作のポイント</p>
           <p class="p-singleWorks-point__text">
-            <?php the_field('create'); ?>
+            <?php echo nl2br(get_field('create')); ?>
           </p>
         </div>
         <div class="p-singleWorks__point p-singleWorks-point">
           <p class="p-singleWorks-point__title">デザインのポイント</p>
           <p class="p-singleWorks-point__text">
-            <?php the_field('design'); ?>
+            <?php echo nl2br(get_field('design')); ?>
           </p>
         </div>
         <div class="p-singleWorks__point p-singleWorks-point">
           <p class="p-singleWorks-point__title">その他</p>
           <p class="p-singleWorks-point__text">
-            <?php the_field('other'); ?>
+            <?php echo nl2br(get_field('other')); ?>
           </p>
         </div>
       </div>
