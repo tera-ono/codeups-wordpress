@@ -12,7 +12,11 @@ const swiper1 = new Swiper('.js-topMv-swiper', {
 
   // 表示方法
   effect: 'fade',
-
+  // effect: ‘fade’ のときのみ
+  // 下のコンテンツが重なって出てしまわないように true にする
+  fadeEffect: { 
+		crossFade: true
+	},
   // 自動再生
   autoplay : {
     // 次のスライドまでの時間
