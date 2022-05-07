@@ -30,15 +30,15 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 /*******************************************
 トップページのメインビューを画面の高さいっぱいに表示する記述(100vh指定だと、iPhoneのSafariはアドレスバーが表示されアドレスバーの高さだけメインビューが画面の下にはみ出してしまう為) 
 
-ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.p-topMvと .topMv__swiper の.swiper-slideと ローディング画面.js-loadingの高さを指定します。
+ページの読み込み時とウインドウサイズ変更時にウインドウサイズを取得して.js-topMvと .js-topMv__swiper の.swiper-slideと ローディング画面.js-loadingの高さを指定します。
 *******************************************/
   $(document).ready(function () {
     var windowHeight = $(window).height();
-    $(".p-topMv,.p-topMv__swiper .swiper-slide, .js-loading").height(windowHeight);
+    $(".js-topMv,.js-topMv-swiper .swiper-slide, .js-loading").height(windowHeight);
   });
   $(window).resize(function () {
     var windowHeight = $(window).height();
-    $(".js-topMv-swiper, .js-loading").height(windowHeight);
+    $(".js-topMv, .js-topMv-swiper .swiper-slide, .js-loading").height(windowHeight);
   });
 
 
