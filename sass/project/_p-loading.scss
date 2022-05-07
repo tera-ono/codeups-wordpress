@@ -1,5 +1,7 @@
 /* --- ローディング画面 最初の1回だけアニメーションをする使用(jsで制御) --- */
 @use "global" as *;
+
+
 .p-loading {
   position: fixed;
   top: 0;
@@ -7,8 +9,8 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  /* --- トップページへ遷移した時に、ローディングアニメーション前の画面が見えないようにする --- */
-  opacity: 0;
+  /* --- ローディング時にのトップページが見えないようにする --- */
+  opacity: 1;
 
   //beforeとafterで、背景マスクを上下2分割している
   &::before,
@@ -48,6 +50,7 @@
 }
 
 .p-loading__logo {
+  opacity: 0;
   img {
     display: inline-block;
     width: rem(220);
@@ -58,6 +61,7 @@
 }
 
 .p-loading__copy {
+  opacity: 0;
   margin-top: rem(30);
   font-size: rem(30);
   font-weight: $bold;
@@ -78,6 +82,7 @@
 
 //対角に斜めの線 
 .p-loading__line {
+  opacity: 0;
   position: absolute;
   z-index: 2;
   top: 0;
