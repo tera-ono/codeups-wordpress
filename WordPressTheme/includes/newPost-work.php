@@ -18,7 +18,7 @@ foreach ($new_workPosts as $post) : setup_postdata($post);
         </div>
         <div class="c-newPost-work__body">
           <div class="c-newPost-work__title">
-            <?php echo esc_html(get_the_title(), 20, '...'); ?>
+            <?php echo esc_html(get_the_title(), 20, '...').' 様'; ?>
           </div>
           <div class="c-newPost-work__meta">
             <time class="c-newPost-work__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y/m/d'); ?></time>
