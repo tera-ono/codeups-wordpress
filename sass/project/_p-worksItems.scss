@@ -20,7 +20,9 @@
 }
 
 .p-worksItems__item:nth-of-type(even) {
-  margin-left: 4.3636%;
+  @include mq("md") {
+    margin-left: 4.3636%;
+  }
 }
 
 .p-worksItems__item:nth-of-type(-n + 2) {

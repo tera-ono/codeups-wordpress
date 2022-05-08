@@ -32,8 +32,11 @@ a {
   text-decoration: none;
   color: inherit;
   transition: opacity $transition-duration linear;
-  &:hover, &:focus {
-    opacity: $opacity;
-    transition: opacity $transition-duration linear;
+  @include mq("md") {
+    &:hover,
+    &:focus {
+      opacity: $opacity;
+      transition: opacity $transition-duration linear;
+    }
   }
 }

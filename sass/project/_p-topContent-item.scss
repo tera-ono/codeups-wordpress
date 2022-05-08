@@ -48,7 +48,7 @@
   .p-topContent-item:active::after {
     background-color: rgba(255, 255, 255, 0.6);
     transition: background-color $transition-duration ease-in;
-    opacity: 1;
+    // opacity: 1;
   }
 }
 

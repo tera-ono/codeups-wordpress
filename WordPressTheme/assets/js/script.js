@@ -1,3 +1,8 @@
+/* --- sp時にタッチした時にリンクに飛ぶ動作とhover,active動作を同時にさせることができる --- */
+document.ontouchstart = function() {};
+document.addEventListener('touchstart', function() {}, true);
+document.addEventListener('touchstart', function() {}, false);
+
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
   /*******************************************
