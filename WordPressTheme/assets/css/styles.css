@@ -3661,13 +3661,6 @@ input[type=submit] {
     transition: background-color 0.3s ease-in;
   }
 }
-@media (any-hover: none) {
-  .p-topContent-item:active::after {
-    background-color: rgba(255, 255, 255, .6);
-    -webkit-transition: background-color 0.3s ease-in;
-    transition: background-color 0.3s ease-in;
-  }
-}
 .p-topContent-item__title {
   position: absolute;
   top: 50%;
