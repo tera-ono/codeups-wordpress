@@ -41,10 +41,8 @@ add_action('after_setup_theme', 'my_setup');
 /* --- ファイル名間違い注意！！ --- */
 function my_script_init()
 {
-
-	wp_enqueue_style('google-font1', "https://fonts.googleapis.com", array(), '1.0.1', 'all');
-	wp_enqueue_style('google-font2', "https://fonts.gstatic.com", array(), '1.0.1', 'all');
-	wp_enqueue_style('google-font3', "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP&display=swap", array(), '1.0.1', 'all');
+	wp_enqueue_style('google-font1', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP&display=swap', array(), '1.0.1', 'all');
+	
 	if (is_front_page()) {
 		wp_enqueue_style('google-font4', "https://fonts.googleapis.com/css2?family=Overlock:ital,wght@1,900&display=swap", array(), '1.0.1', 'all');
 	}
@@ -52,7 +50,8 @@ function my_script_init()
 	wp_enqueue_style('font-awesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css", array(), '5.11.2', 'all');
 
 	wp_enqueue_style('swiper-CDN', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.css", array(), '1.0.1', 'all');
-	wp_enqueue_style('my', get_template_directory_uri() . '/assets/css/styles.css', array(), '1.0.1', 'all');
+	wp_enqueue_style('my', get_theme_file_uri('/assets/css/styles.css'), array(), filemtime(get_theme_file_path('/assets/css/styles.css')), 'all');
+	
 
 	wp_enqueue_script('swiper-CDN', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js", array(), '1.0.0', true);
 
@@ -61,14 +60,20 @@ function my_script_init()
 	}
 
 	if (is_singular('works')) {
-		wp_enqueue_script('single-works_slider', get_template_directory_uri() . '/assets/js/single-works_slider.js', array(), '1.0.0', true);
+		wp_enqueue_script('single-works_slider', get_theme_file_uri('/assets/js/single-works_slider.js'), array(), get_theme_file_path('/assets/js/single-works_slider.js'), true );
+		
+		// wp_enqueue_script('single-works_slider', get_template_directory_uri() . '/assets/js/single-works_slider.js', array(), '1.0.0', true);
 	}
 
 	if (is_page('contact')) {
-		wp_enqueue_script('contact_error', get_template_directory_uri() . '/assets/js/contact_error.js', array(), '1.0.0', true);
+		wp_enqueue_script('contact_error', get_theme_file_uri('/assets/js/contact_error.js'), array(), get_theme_file_path('/assets/js/contact_error.js'), true );
+		
+		// wp_enqueue_script('contact_error', get_template_directory_uri() . '/assets/js/contact_error.js', array(), '1.0.0', true);
 	}
 
-	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true);
+	wp_enqueue_script('my', get_theme_file_uri('/assets/js/script.js'), array(), get_theme_file_path('/assets/js/script.js'), true );
+	
+	// wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true);
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
@@ -158,6 +163,48 @@ function my_excerpt_more($more)
 }
 add_filter('excerpt_more', 'my_excerpt_more');
 
+
+/**
+ * カテゴリー名とターム名を1つだけ表示（aタグリンクも出しわけ）[引数デフォルト: カテゴリー]
+ *
+ * @param boolean $anchor aタグで出力するかどうか.
+ * @param string  $taxonomy タクソノミー:初期値はデフォルトの投稿で使うcategory。 カスタム投稿の場合はそのタクソノミーを指定
+ * @param integer $id 投稿id.
+ * @return void
+ */
+function my_the_post_terms($anchor = false, $taxonomy = 'category', $id = 0)
+{
+  global $post;
+  //引数が渡されなければ投稿IDを見るように設定
+  if (0 === $id) {
+    $id = $post->ID;
+  }
+
+  //ターム(カテゴリー)一覧を取得
+  /* --- もし、taxonomy.php or category.phpだったら現在表示中のターム(カテゴリ)情報を取得 --- */
+  if(is_tax() || is_category()) {
+    $this_terms = get_queried_object();
+    if ($this_terms) {
+      if ($anchor) { //引数がtrueなら個別投稿記事リンク付きで出力
+  
+        echo '<a href="' . get_the_permalink() . '">' . esc_html($this_terms->name) . '</a>';
+      } else { //引数がfalseならカテゴリー名のみ出力
+        echo esc_html($this_terms->name);
+      }
+    }
+  } else { /* --- それ以外、つまりその他のアーカイブページ:
+						home.php(デフォルト投稿一覧), archive-〇〇.php(カスタム投稿一覧)のターム(カテゴリ)情報を取得 --- */
+    $this_terms = get_the_terms($id, $taxonomy);
+    if ($this_terms[0]) {
+      if ($anchor) { //引数がtrueならアーカイブへのリンク付きで出力
+  
+        echo '<a href="' . esc_url(get_term_link($this_terms[0]->term_id)) . '">' . esc_html($this_terms[0]->name) . '</a>';
+      } else { //引数がfalseならカテゴリー名のみ出力
+        echo esc_html($this_terms[0]->name);
+      }
+    } 
+  }
+}
 
 
 /* それぞれのテンプレートファイルのメインループを制御して、出力する数などを変更
